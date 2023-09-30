@@ -1,0 +1,33 @@
+01. Crie um novo projeto com uma página que tenha 1 botão com o rótulo "Gerar". Para essa questão, crie um ouvinte de evento 
+(addEventListener) no referido botão que realiza uma chamada para uma função gerarNumero() que retorna um número aleatório entre 1 
+e 100 usando a função Math.random(). Mostre todos os números gerados, para o usuário em elementos <li> dentro de um <ul>.
+
+
+02. Crie um novo projeto com uma página que tenha 2 campos de texto com os seguintes rótulos: base e expoente, e 1 botão com o 
+rótulo "Calcular". Para essa questão, crie um ouvinte de evento no referido botão que busca os valores digitados e realiza uma chamada 
+para uma função calcularPotencia(base, expoente) que você irá implementar usando arrow function e que invoca a função Math.pow() e 
+mostra o número gerado para o usuário em uma <div>.
+
+
+/* 03. Crie um novo projeto com uma página e dois campos para que o usuário possa digitar o valor atual da gasolina e do álcool e um 
+botão para realizar o cálculo e informar ao usuário qual o melhor combustível para abastecer no momento, crie uma função chamada 
+calcularMelhorCombustivel que recebe os dois valores e retorna 0 para gasolina e 1 para álcool. */
+
+
+04. Crie um projeto com uma página contendo um campo de texto onde o usuário vai digitar uma temperatura em escala Celsius. O que 
+deve ser feito:
+
+  - Crie duas funções, uma para converter a temperatura para Fahrenheit (converterFahrenheit) e outra para converter para Kelvin 
+    (converterKelvin).
+
+  - Crie um ouvinte de evento 'keyup' no campo de texto para atualizar os elementos do tipo span #temp-fahrenheit e #temp-kelvin com 
+    as temperaturas nas respectivas escalas à medida que o usuário digita um valor numérico.
+
+  - Caso o usuário não tenha digitado nada ou o valor seja inválido, o valor das temperaturas após a conversão deve ser um “-”, logo 
+    abaixo deve existir uma mensagem pedindo para o usuário digitar um valor.
+
+
+05. Crie um projeto com apenas um botão com rótulo “Simular”. Esse botão deve estar associado a um evento que vai realizar uma 
+simulação de um rolamento de dados comuns (com valores de 1 a 6) 1 milhão de vezes. Ao final, deve mostrar na tela quantas vezes 
+cada um dos números apareceu na simulação. Use o método Math.random() pra gerar esse número entre 1 e 6, fazendo o arredondamento 
+quando necessário.
