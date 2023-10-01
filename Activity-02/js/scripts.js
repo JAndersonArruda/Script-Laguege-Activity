@@ -67,9 +67,42 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // Question 04.
 
+document.addEventListener("DOMContentLoaded", () => {
+    const lista = document.querySelector("ul");
+    const nomeInput = document.getElementById("name");
+    const salarioInput = document.getElementById("wage");
+    const adicionarButton = document.querySelector("button");
 
+    let arryaLista = [];
 
+    adicionarButton.addEventListener("click", () => {
+        const nome = nomeInput.value;
+        const salario = parseFloat(salarioInput.value).toFixed(2);
 
-// Question 05. 
+        if (nome && !isNaN(salario)) {
+            const employee = {
+                name: nome,
+                wage: salario,
+            };
 
+            arryaLista.push(employee);
 
+            nomeInput.value = "";
+            salarioInput.value = "";
+
+            // const totalWage = arryaLista.reduce((accumalator, employe) => accumalator + employe.wage, 0);
+            // const maxWage = arryaLista.reduce((accumalator, employe) => Math.max(accumalator, employe.wage), 0);
+            // const employeeMaxWage = arryaLista.find((employe) => employe.wage === maxWage);
+
+            // const div = document.querySelector("#dados");
+            // const dados = document.createElement("p");
+            // dados.textContent = `O maior salario é pago a ${employeeMaxWage.name}, com valor de ${maxWage} R$ <br> O total de salarios pagos é de ${totalWage}`;
+            // div.replaceChildren();
+            // div.appendChild(dados);
+
+            const newEmployee = document.createElement("li");
+            newEmployee.textContent = `Nome: ${employee.name}, Salário ${employee.wage} R$`;
+            lista.appendChild(newEmployee);
+        }
+    });
+});
