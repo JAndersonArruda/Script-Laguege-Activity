@@ -11,7 +11,9 @@ document.addEventListener("DOMContentLoaded", () => {
         const separador = separadorInput.value;
 
         if (conjunto && separador) {
-            const conjuntoInt = conjunto.split(separador).map((num) => parseInt(num.trim()));
+            const conjuntoInt = conjunto.split(separador).map((num) => {
+                return parseInt(num.trim())
+            });
 
             let max = Math.max(...conjuntoInt);
             let min = Math.min(...conjuntoInt);
@@ -62,7 +64,99 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // Question 03. 
 
+document.addEventListener("DOMContentLoaded", () => {
+    const filmTable = document.querySelector("#filmTable");
+    const filter = document.querySelector("#filter");
 
+    const filmes = [{
+        "titulo": "Dawn of the Planet of the Apes",
+        "lancamento": 2014,
+    },
+    {
+        "titulo": "District 9",
+        "lancamento": 2009,
+    },
+    {
+        "titulo": "Transformers: Age of Extinction",
+        "lancamento": 2014,
+    },
+    {
+        "titulo": "X-Men: Days of Future Past",
+        "lancamento": 2014,
+    },
+    {
+        "titulo": "The Machinist",
+        "lancamento": 2004,
+    },
+    {
+        "titulo": "The Last Samurai",
+        "lancamento": 2003,
+    },
+    {
+        "titulo": "The Amazing Spider-Man 2",
+        "lancamento": 2014,
+    },
+    {
+        "titulo": "Tangled",
+        "lancamento": 2010,
+    },
+    {
+        "titulo": "Rush",
+        "lancamento": 2013,
+    },
+    {
+        "titulo": "Drag Me to Hell",
+        "lancamento": 2009,
+    },
+    {
+        "titulo": "Despicable Me 2",
+        "lancamento": 2013,
+    },
+    {
+        "titulo": "Kill Bill: Vol. 1",
+        "lancamento": 2003,
+    },
+    {
+        "titulo": "A Bug's Life",
+        "lancamento": 1998,
+    },
+    {
+        "titulo": "Life of Brian",
+        "lancamento": 1972,
+    },
+    {
+        "titulo": "How to Train Your Dragon",
+        "lancamento": 2010,
+    }];
+
+    const updateFilm = (filter) => {
+        filmTable.replaceChildren();
+        
+        filter.forEach((film) => {
+            const row = document.createElement("tr");
+            const title = document.createElement("td");
+            title.textContent = film.titulo;
+            const date = document.createElement("td");
+            date.textContent = film.lancamento;
+
+            row.appendChild(title);
+            row.appendChild(date);
+
+            filmTable.appendChild(row);
+        });
+    };
+
+    filter.addEventListener("keyup", () => {
+        const valueFilter = filter.value.toLowerCase();
+        const filmFilter = filmes.filter((film) => {
+            return film.titulo.toLowerCase().includes(valueFilter);
+        });
+
+        updateFilm(filmFilter);
+    });
+
+    updateFilm(filmes);
+});
 
 
 // Question 04.
@@ -91,9 +185,17 @@ document.addEventListener("DOMContentLoaded", () => {
             nomeInput.value = "";
             salarioInput.value = "";
 
-            const totalWage = arrayLista.reduce((sum, inEmployee) => sum + parseFloat(inEmployee.wage), 0);
-            const maxWage = arrayLista.reduce((max, inEmployee) => Math.max(max, parseFloat(inEmployee.wage)), 0);
-            const employeeMaxWage = arrayLista.find((inEmployee) => parseFloat(inEmployee.wage) === maxWage);
+            const totalWage = arrayLista.reduce((sum, inEmployee) => {
+                return sum + parseFloat(inEmployee.wage);
+            }, 0);
+
+            const maxWage = arrayLista.reduce((max, inEmployee) => {
+                return Math.max(max, parseFloat(inEmployee.wage))
+            }, 0);
+
+            const employeeMaxWage = arrayLista.find((inEmployee) => {
+                return parseFloat(inEmployee.wage) === maxWage
+            });
 
             const newEmployee = document.createElement("li");
             newEmployee.textContent = `Nome: ${employee.name}, Salário ${employee.wage} R$`;
