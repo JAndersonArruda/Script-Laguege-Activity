@@ -3,8 +3,8 @@
 document.addEventListener("DOMContentLoaded", () => {
     const conjuntoInput = document.getElementById("conjunto");
     const separadorInput = document.getElementById("separador");
-    const resultadoDiv = document.querySelector("div");
-    const buttonAchar = document.querySelector("button");
+    const resultadoDiv = document.querySelector("#result");
+    const buttonAchar = document.querySelector("#butAchar");
 
     buttonAchar.addEventListener("click", () => {
         const conjunto = conjuntoInput.value;
@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
 // Question 02.
 
 document.addEventListener("DOMContentLoaded", () => {
-    const lista = document.querySelector("ul");
+    const lista = document.querySelector("#list");
     const tarefaInput = document.querySelector("#tarefa");
 
     tarefaInput.addEventListener("keypress", (event) => {
@@ -161,11 +161,11 @@ document.addEventListener("DOMContentLoaded", () => {
 // Question 04.
 
 document.addEventListener("DOMContentLoaded", () => {
-    const lista = document.querySelector("ul");
+    const lista = document.querySelector("#listWage");
     const div = document.querySelector("#dados")
     const nomeInput = document.getElementById("name");
     const salarioInput = document.getElementById("wage");
-    const adicionarButton = document.querySelector("button");
+    const adicionarButton = document.querySelector("#addEmployee");
 
     let arrayLista = [];
 
