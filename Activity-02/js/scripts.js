@@ -91,8 +91,8 @@ document.addEventListener("DOMContentLoaded", () => {
             nomeInput.value = "";
             salarioInput.value = "";
 
-            const totalWage = arrayLista.reduce((accumalator, inEmployee) => accumalator + parseFloat(inEmployee.wage), 0);
-            const maxWage = arrayLista.reduce((accumalator, inEmployee) => Math.max(accumalator, parseFloat(inEmployee.wage)), 0);
+            const totalWage = arrayLista.reduce((sum, inEmployee) => sum + parseFloat(inEmployee.wage), 0);
+            const maxWage = arrayLista.reduce((max, inEmployee) => Math.max(max, parseFloat(inEmployee.wage)), 0);
             const employeeMaxWage = arrayLista.find((inEmployee) => parseFloat(inEmployee.wage) === maxWage);
 
             const newEmployee = document.createElement("li");
