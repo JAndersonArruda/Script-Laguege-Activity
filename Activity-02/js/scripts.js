@@ -69,11 +69,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
 document.addEventListener("DOMContentLoaded", () => {
     const lista = document.querySelector("ul");
+    const div = document.querySelector("#dados")
     const nomeInput = document.getElementById("name");
     const salarioInput = document.getElementById("wage");
     const adicionarButton = document.querySelector("button");
 
-    let arryaLista = [];
+    let arrayLista = [];
 
     adicionarButton.addEventListener("click", () => {
         const nome = nomeInput.value;
@@ -85,24 +86,24 @@ document.addEventListener("DOMContentLoaded", () => {
                 wage: salario,
             };
 
-            arryaLista.push(employee);
+            arrayLista.push(employee);
 
             nomeInput.value = "";
             salarioInput.value = "";
 
-            // const totalWage = arryaLista.reduce((accumalator, employe) => accumalator + employe.wage, 0);
-            // const maxWage = arryaLista.reduce((accumalator, employe) => Math.max(accumalator, employe.wage), 0);
-            // const employeeMaxWage = arryaLista.find((employe) => employe.wage === maxWage);
-
-            // const div = document.querySelector("#dados");
-            // const dados = document.createElement("p");
-            // dados.textContent = `O maior salario é pago a ${employeeMaxWage.name}, com valor de ${maxWage} R$ <br> O total de salarios pagos é de ${totalWage}`;
-            // div.replaceChildren();
-            // div.appendChild(dados);
+            const totalWage = arrayLista.reduce((accumalator, inEmployee) => accumalator + parseFloat(inEmployee.wage), 0);
+            const maxWage = arrayLista.reduce((accumalator, inEmployee) => Math.max(accumalator, parseFloat(inEmployee.wage)), 0);
+            const employeeMaxWage = arrayLista.find((inEmployee) => parseFloat(inEmployee.wage) === maxWage);
 
             const newEmployee = document.createElement("li");
             newEmployee.textContent = `Nome: ${employee.name}, Salário ${employee.wage} R$`;
             lista.appendChild(newEmployee);
+
+            const dados = document.createElement("p");
+            dados.textContent = `O maior salario é pago a ${employeeMaxWage.name}, com valor de ${maxWage} R$. O total de salarios pagos é de ${totalWage.toFixed(2)}`;
+            div.replaceChildren();
+            div.appendChild(dados);
+
         }
     });
 });
