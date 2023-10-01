@@ -141,7 +141,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
             row.appendChild(title);
             row.appendChild(date);
-
             filmTable.appendChild(row);
         });
     };
