@@ -200,11 +200,14 @@ document.addEventListener("DOMContentLoaded", () => {
             newEmployee.textContent = `Nome: ${employee.name}, Salário ${employee.wage} R$`;
             lista.appendChild(newEmployee);
 
-            const dados = document.createElement("p");
-            dados.textContent = `O maior salario é pago a ${employeeMaxWage.name}, com valor de ${maxWage} R$. O total de salarios pagos é de ${totalWage.toFixed(2)}`;
+            const dadosMaiorWage = document.createElement("p");
+            dadosMaiorWage.textContent = `O maior salario é pago a ${employeeMaxWage.name}, com valor de ${maxWage} R$.`;
+            const dadosTotalWage = document.createElement("p");
+            dadosTotalWage.textContent = `O total de salarios pagos é de ${totalWage.toFixed(2)}`
+            
             div.replaceChildren();
-            div.appendChild(dados);
-
+            div.appendChild(dadosMaiorWage);
+            div.appendChild(dadosTotalWage);
         }
     });
 });
