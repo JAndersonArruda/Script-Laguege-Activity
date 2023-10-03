@@ -1,8 +1,8 @@
 // Question 01.
 
 document.addEventListener("DOMContentLoaded", () => {
-    const conjuntoInput = document.getElementById("conjunto");
-    const separadorInput = document.getElementById("separador");
+    const conjuntoInput = document.querySelector("#conjunto");
+    const separadorInput = document.querySelector("#separador");
     const resultadoDiv = document.querySelector("#result");
     const buttonAchar = document.querySelector("#butAchar");
 
@@ -11,9 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const separador = separadorInput.value;
 
         if (conjunto && separador) {
-            const conjuntoInt = conjunto.split(separador).map((num) => {
-                return parseInt(num.trim())
-            });
+            const conjuntoInt = conjunto.split(separador).map((num) => parseInt(num.trim()));
 
             let max = Math.max(...conjuntoInt);
             let min = Math.min(...conjuntoInt);
@@ -49,9 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
             newTarefa.textContent = tarefa;
 
             const buttonDelete = document.createElement("button");
-            buttonDelete.addEventListener("click", () => {
-                lista.removeChild(newTarefa);
-            });
+            buttonDelete.addEventListener("click", () => lista.removeChild(newTarefa));
 
             buttonDelete.textContent = "X";
             newTarefa.appendChild(buttonDelete);
@@ -147,9 +143,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     filter.addEventListener("keyup", () => {
         const valueFilter = filter.value.toLowerCase();
-        const filmFilter = filmes.filter((film) => {
-            return film.titulo.toLowerCase().includes(valueFilter);
-        });
+        const filmFilter = filmes.filter((film) => film.titulo.toLowerCase().includes(valueFilter));
 
         updateFilm(filmFilter);
     });
@@ -163,8 +157,8 @@ document.addEventListener("DOMContentLoaded", () => {
 document.addEventListener("DOMContentLoaded", () => {
     const lista = document.querySelector("#listWage");
     const div = document.querySelector("#dados")
-    const nomeInput = document.getElementById("name");
-    const salarioInput = document.getElementById("wage");
+    const nomeInput = document.querySelector("#name");
+    const salarioInput = document.querySelector("#wage");
     const adicionarButton = document.querySelector("#addEmployee");
 
     let arrayLista = [];
@@ -184,17 +178,9 @@ document.addEventListener("DOMContentLoaded", () => {
             nomeInput.value = "";
             salarioInput.value = "";
 
-            const totalWage = arrayLista.reduce((sum, inEmployee) => {
-                return sum + parseFloat(inEmployee.wage);
-            }, 0);
-
-            const maxWage = arrayLista.reduce((max, inEmployee) => {
-                return Math.max(max, parseFloat(inEmployee.wage))
-            }, 0);
-
-            const employeeMaxWage = arrayLista.find((inEmployee) => {
-                return parseFloat(inEmployee.wage) === maxWage
-            });
+            const totalWage = arrayLista.reduce((sum, inEmployee) => sum + parseFloat(inEmployee.wage), 0);
+            const maxWage = arrayLista.reduce((max, inEmployee) => Math.max(max, parseFloat(inEmployee.wage)), 0);
+            const employeeMaxWage = arrayLista.find((inEmployee) => parseFloat(inEmployee.wage) === maxWage);
 
             const newEmployee = document.createElement("li");
             newEmployee.textContent = `Nome: ${employee.name}, Salário ${employee.wage} R$`;
