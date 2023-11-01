@@ -7,28 +7,48 @@
     <link rel="stylesheet" href="./css/styles.css">
 </head>
 <body>
-    <form action="">
-        <h3>Sistema Bancario</h3><br><br>
+    <div>
+        <form action="">
+            <h2>Sistema Bancario</h2><br>
 
-        <label for="name">Nome</label>
-        <input type="text" name="name" id="name" placeholder="Informe se nome:">
+            <label for="name">Nome</label><br>
+            <input type="text" name="name" id="name" placeholder="Informe se nome:" required><br>
+            <label for="bank">Banco</label><br>
+            <input type="text" name="bank" id="bank" placeholder="Informe o banco:" required><br>
+            <label for="agency">Agencia</label><br>
+            <input type="text" name="agency" id="agency" placeholder="0000-0" required><br>
+            <label for="account">Conta</label><br>
+            <input type="text" name="account" id="account" placeholder="0000000-0" required><br>
+            <label for="type-account">Tipo da Conta</label><br>
+            <select name="type-account" id="type-account" required>
+                <option value="---">---</option>
+                <option value="corrente">Conta Corrente</option>
+                <option value="poupanca">Conta Poupança</option>
+                <option value="conjunta">Conta Conjunta</option>
+            </select>
 
-        <label for="bank">Banco</label>
-        <input type="text" name="bank" id="bank" placeholder="Informe o banco:">
-        <label for="agency">Agencia</label>
-        <input type="text" name="agency" id="agency" placeholder="Informe o número da agencia:">
-        <label for="account">Conta</label>
-        <input type="text" name="account" id="account" placeholder="Informe o número da conta:">
-        <label for="type-account">Tipo da Conta</label>
-        <input type="text" name="type-account" id="type-account" placeholder="Informe o tipo da conta:">
-
-        <button id="addClient">Adicionar</button>
-    </form>
+            <button id="addClient">Adicionar</button>
+        </form>
+    </div>
 
     <div>
-        <ul id="list-client">
+        <h3>Clientes</h3>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Banco</th>
+                    <th>Agencia</th>
+                    <th>Conta</th>
+                    <th>Tipo da Conta</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
 
-        </ul>
+            <tbody id="list-client">
+                
+            </tbody>
+        </table>
     </div>
 
     <script src="./js/scripts.js"></script>
