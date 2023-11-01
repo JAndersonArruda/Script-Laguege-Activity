@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // Question 02.
 document.addEventListener("DOMContentLoaded", () => {
-    const listClientUl = document.querySelector("#list-client");
+    const listClientTbody = document.querySelector("#list-client");
     const nameInput = document.querySelector("#name");
     const bankInput = document.querySelector("#bank");
     const agencyInput = document.querySelector("#agency");
@@ -41,12 +41,58 @@ document.addEventListener("DOMContentLoaded", () => {
     const typeAccountInput = document.querySelector("#type-account");
     const addClientButton = document.querySelector("#addClient");
     
+    const arrayAccount = [];
+
     addClientButton.addEventListener("click", () => {
         const name = nameInput.value;
         const bank = bankInput.value;
         const agency = agencyInput.value;
         const account = accountInput.value;
         const typeAccount = typeAccountInput.value;
+        
+        const newAccount = {
+            name: name,
+            bank: bank,
+            agency: agency,
+            account: account,
+            type: typeAccount
+        };
+
+        arrayAccount.push(newAccount);
+
+        listClientTbody.replaceChildren();
+
+        arrayAccount.forEach((event) => {
+            const newCleint = document.createElement("tr");
+            const clientName = document.createElement("td");
+            const clientBank = document.createElement("td");
+            const clientAgency = document.createElement("td");
+            const clientAccount = document.createElement("td");
+            const clientType = document.createElement("td");
+            const clientTransation = document.createElement("td");
+
+            clientName.textContent = event.name;
+            clientBank.textContent = event.bank;
+            clientAgency.textContent = event.agency;
+            clientAccount.textContent = event.account;
+            clientType.textContent = event.type;
+            clientTransation.textContent = "---";
+
+            newCleint.appendChild(clientName);
+            newCleint.appendChild(clientBank);
+            newCleint.appendChild(clientAgency);
+            newCleint.appendChild(clientAccount);
+            newCleint.appendChild(clientType);
+            newCleint.appendChild(clientTransation);
+
+            listClientTbody.appendChild(newCleint);
+
+            nameInput.value = "";
+            bankInput.value = "";
+            agencyInput.value = "";
+            accountInput.value = "";
+            typeAccountInput.value = "---";
+        });
     });
 });
 
