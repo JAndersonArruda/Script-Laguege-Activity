@@ -20,11 +20,14 @@ document.addEventListener("DOMContentLoaded", () => {
         arrayEvents.sort((a, b) => a.dateTime - b.dateTime);
 
         listUl.replaceChildren();
+
         arrayEvents.forEach((event) => {
             const newEvent = document.createElement("li");
             newEvent.textContent = `${event.name} - ${event.dateTime}`;
             listUl.appendChild(newEvent);
+
             titleInput.value = "";
+            dateTimeInput.value = "";
         });
     });
 });
