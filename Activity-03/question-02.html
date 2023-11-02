@@ -13,12 +13,16 @@
 
             <label for="name">Nome</label><br>
             <input type="text" name="name" id="name" placeholder="Informe se nome:" required><br>
+
             <label for="bank">Banco</label><br>
             <input type="text" name="bank" id="bank" placeholder="Informe o banco:" required><br>
+
             <label for="agency">Agencia</label><br>
             <input type="text" name="agency" id="agency" placeholder="0000-0" required><br>
+
             <label for="account">Conta</label><br>
             <input type="text" name="account" id="account" placeholder="0000000-0" required><br>
+
             <label for="type-account">Tipo da Conta</label><br>
             <select name="type-account" id="type-account" required>
                 <option value="---">---</option>
@@ -26,6 +30,9 @@
                 <option value="poupanca">Conta Poupança</option>
                 <option value="conjunta">Conta Conjunta</option>
             </select>
+
+            <label for="balance-account">Saldo</label><br>
+            <input type="text" name="balance-account" id="balance-account" placeholder="00,00" required><br>
 
             <button id="addClient">Adicionar</button>
         </form>
@@ -41,7 +48,7 @@
                     <th>Agencia</th>
                     <th>Conta</th>
                     <th>Tipo da Conta</th>
-                    <th>Ações</th>
+                    <th>Saldo</th>
                 </tr>
             </thead>
 
