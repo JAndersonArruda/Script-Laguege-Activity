@@ -38,104 +38,15 @@ document.addEventListener("DOMContentLoaded", () => {
 // Question 02.
 
 document.addEventListener("DOMContentLoaded", () => {
-    const listClientTbody = document.querySelector("#list-client");
-    const nameInput = document.querySelector("#name");
-    const bankInput = document.querySelector("#bank");
-    const agencyInput = document.querySelector("#agency");
-    const accountInput = document.querySelector("#account");
-    const typeAccountInput = document.querySelector("#type-account");
-    const balanceAccountInput = document.querySelector("#balance-account");
-    const addClientButton = document.querySelector("#addClient");
-    
-    const arrayAccount = [];
+    const clientTable = document.querySelector("#list-client");
+    const clientName = document.querySelector("#name");
+    const clientBank = document.querySelector("#bank");
+    const clientAgency = document.querySelector("#agency");
+    const clientAccount = document.querySelector("#account");
+    const clientType = document.querySelector("#type-account");
+    const clientWithdraw = document.querySelector("#balance-account");
+    const btAddClient = document.querySelector("#addClient");
 
-    addClientButton.addEventListener("click", () => {
-        const name = nameInput.value;
-        const bank = bankInput.value;
-        const agency = agencyInput.value;
-        const account = accountInput.value;
-        const typeAccount = typeAccountInput.value;
-        const balance = parseFloat(balanceAccountInput.value);
-        
-        const newAccount = {
-            name: name,
-            bank: bank,
-            agency: agency,
-            account: account,
-            type: typeAccount,
-            balance: balance
-        };
-
-        arrayAccount.push(newAccount);
-
-        listClientTbody.replaceChildren();
-
-        arrayAccount.forEach((client) => {
-            const newCleint = document.createElement("tr");
-            const clientName = document.createElement("td");
-            const clientBank = document.createElement("td");
-            const clientAgency = document.createElement("td");
-            const clientAccount = document.createElement("td");
-            const clientType = document.createElement("td");
-            const clientHithdraw = document.createElement("td");
-            const clientAction = document.createElement("td");
-
-            const btHithdraw = document.createElement("button");
-            btHithdraw.addEventListener("click", () => {
-                if (client.balance >= 100) {
-                    return client.balance -= 100;
-                }
-                return client.balance;
-            });
-
-            const btDeposit = document.createElement("button");
-            btDeposit.addEventListener("click", () => client.balance += 100);
-
-            clientName.textContent = client.name;
-            clientBank.textContent = client.bank;
-            clientAgency.textContent = client.agency;
-            clientAccount.textContent = client.account;
-            clientType.textContent = client.type;
-            clientHithdraw.textContent = client.balance.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
-
-            btHithdraw.textContent = "Dow";
-            btDeposit.textContent = "Up";
-
-            clientAction.appendChild(btDeposit);
-            clientAction.appendChild(btHithdraw);
-
-            newCleint.appendChild(clientName);
-            newCleint.appendChild(clientBank);
-            newCleint.appendChild(clientAgency);
-            newCleint.appendChild(clientAccount);
-            newCleint.appendChild(clientType);
-            newCleint.appendChild(clientHithdraw);
-            newCleint.appendChild(clientAction);
-            
-            listClientTbody.appendChild(newCleint);
-
-            nameInput.value = "";
-            bankInput.value = "";
-            agencyInput.value = "";
-            accountInput.value = "";
-            typeAccountInput.value = "---";
-            balanceAccountInput.value = "";
-        });
-    });
-});
-
-
-// Worked Class
-document.addEventListener("DOMContentLoaded", () => {
-    // const listClientTbody = document.querySelector("#list-client");
-    // const nameInput = document.querySelector("#name");
-    // const bankInput = document.querySelector("#bank");
-    // const agencyInput = document.querySelector("#agency");
-    // const accountInput = document.querySelector("#account");
-    // const typeAccountInput = document.querySelector("#type-account");
-    // const balanceAccountInput = document.querySelector("#balance-account");
-    // const addClientButton = document.querySelector("#addClient");
-   
     class ClientBank {
         constructor(name, document, balance) {
             this.name = name;
@@ -143,69 +54,71 @@ document.addEventListener("DOMContentLoaded", () => {
             this.balance = balance;
         }
 
-        hithdraw() {
-            if (this.balance >= 100) {
-                this.balance -= 100;
-                return this.balance;
-            }
-            return "Saldo insuficiente";
-        }
-
         deposit() {
             this.balance += 100;
-            return this.balance;
+        }
+
+        withdraw() {
+            this.balance -= 100;
         }
     }
 
-    addClientButton.addEventListener("click", () => {
-        const name = nameInput.value;
-        const bank = bankInput.value;
-        const agency = agencyInput.value;
-        const account = accountInput.value;
-        const typeAccount = typeAccountInput.value;
-        const balance = parseFloat(balanceAccountInput.value);
+    btAddClient.addEventListener("click", () =>  {
+        const name  = clientName.value;
+        const bank = clientBank.value;
+        const agency = clientAgency.value;
+        const account = clientAccount.value;
+        const typeAccount = clientType.value;
+        const balance = parseFloat(clientWithdraw.value);
 
-        const newDocumentCleint = {
+        const objectDocument = {
             bank: bank,
             agency: agency,
             account: account,
             type: typeAccount
         };
+
+        const newCleint = new ClientBank(name, objectDocument, balance);
+
+        const client = document.createElement("tr");
+        const nameClient = document.createElement("td");
+        const bankClient = document.createElement("td");
+        const agencyClient = document.createElement("td");
+        const accountClient = document.createElement("td");
+        const typeClient = document.createElement("td");
+        const withdrawClient = document.createElement("td");
+        const actionClient = document.createElement("td");
+        const btDeposit = document.createElement("button")
+        const btWithdraw = document.createElement("button")
+
+        nameClient.textContent = newCleint.name;
+        bankClient.textContent = newCleint.document.bank;
+        agencyClient.textContent = newCleint.document.agency;
+        accountClient.textContent = newCleint.document.account;
+        typeClient.textContent = newCleint.document.type;
+        withdrawClient.textContent = newCleint.balance.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+        btDeposit.textContent = "Deposito";
+        btWithdraw.textContent = "Sacar";
+
+        actionClient.appendChild(btDeposit);
+        actionClient.appendChild(btWithdraw);
         
-        const client = new ClientBank(name, newDocumentCleint, balance);
+        client.appendChild(nameClient);
+        client.appendChild(bankClient);
+        client.appendChild(agencyClient);
+        client.appendChild(accountClient);
+        client.appendChild(typeClient);
+        client.appendChild(withdrawClient);
+        client.appendChild(actionClient);
 
-        listClientTbody.replaceChildren();
+        clientTable.appendChild(client);
 
-        const newClient = document.createElement("tr");
-        const clientName = document.createElement("td");
-        const clientBank = document.createElement("td");
-        const clientAgency = document.createElement("td");
-        const clientAccount = document.createElement("td");
-        const clientType = document.createElement("td");
-        const clientTransation = document.createElement("td");
-
-        clientName.textContent = client.name;
-        clientBank.textContent = client.document.bank;
-        clientAgency.textContent = client.document.agency;
-        clientAccount.textContent = client.document.account;
-        clientType.textContent = client.document.type;
-        clientTransation.textContent = client.balance.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
-
-        newClient.appendChild(clientName);
-        newClient.appendChild(clientBank);
-        newClient.appendChild(clientAgency);
-        newClient.appendChild(clientAccount);
-        newClient.appendChild(clientType);
-        newClient.appendChild(clientTransation);
-
-        listClientTbody.appendChild(newClient);
-
-        nameInput.value = "";
-        bankInput.value = "";
-        agencyInput.value = "";
-        accountInput.value = "";
-        typeAccountInput.value = "---";
-        balanceAccountInput.value = "";
+        clientName.value = "";
+        clientBank.value = "";
+        clientAgency.value = "";
+        clientAccount.value = "";
+        clientType.value = "---";
+        clientWithdraw.value = "";
     });
 });
 
