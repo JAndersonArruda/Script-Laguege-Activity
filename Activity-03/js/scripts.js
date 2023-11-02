@@ -62,7 +62,6 @@ document.addEventListener("DOMContentLoaded", () => {
             this.balance -= 100;
         }
     }
-
     
     btAddClient.addEventListener("click", () =>  {
         if (clientName.value && clientBank.value && clientAgency.value && clientAccount.value && clientType.value && clientWithdraw.value) {
@@ -129,4 +128,96 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // Question 03.
 
-document.addEventListener("DOMContentLoaded", () => {});
+document.addEventListener("DOMContentLoaded", () => {
+    const transactionTable = document.querySelector("#list-transactions");
+
+    const agencyTransaction = document.querySelector("#agency-transaction");
+    const accountTransaction = document.querySelector("#account-transaction");
+    const typeAccountTransaction = document.querySelector("#type-account-transaction");
+    const discriptionTransaction = document.querySelector("#discription");
+    const valueTransaction = document.querySelector("#value-transaction");
+
+    const btAddTransactions = document.querySelector("#addTransaction");
+
+    class Transaction {
+        constructor(agency, account, typeAccount, discription, typeTransaction, value, balance) {
+            this.agency = agency;
+            this.account = account;
+            this.typeAccount = typeAccount;
+            this.discription = discription;
+            this.typeTransaction = typeTransaction;
+            this.value = value;
+            this.balance = balance;
+        }
+
+        updateBalance(transaction) {
+            if (this.value > 0) {
+                this.balance += transaction.value;
+                return this.balance;
+            }
+            if (this.value < 0) {
+                this.balance -= transaction.value;
+                return this.balance;
+            }
+        }
+
+        statusTransaction(transaction) {
+            if (this.value > 0) {
+                this.typeTransaction = "Credit";
+                return this.typeTransaction;
+            }
+            if (this.value < 0) {
+                this.typeTransaction = "Debit";
+                return this.typeTransaction;
+            }
+        }
+        
+    }
+
+    btAddTransactions.addEventListener("click", () => {
+        if (agencyTransaction.value && accountTransaction.value && typeAccountTransaction.value && discriptionTransaction.value && valueTransaction.value) {
+            const agency = agencyTransaction.value;
+            const account = accountTransaction.value;
+            const typeAccount = typeAccountTransaction.value;
+            const discription = discriptionTransaction.value;
+            const value = parseFloat(valueTransaction.value);
+
+            const newTransaction = new Transaction(agency, account, typeAccount, discription, "", value, 0);
+            newTransaction.updateBalance(newTransaction);
+            newTransaction.statusTransaction(newTransaction);
+
+            const transaction = document.createElement("tr");
+            const transactionAgency = document.createElement("td");
+            const transactionAccount = document.createElement("td");
+            const transactionTypeAccount = document.createElement("td");
+            const transactionDiscription = document.createElement("td");
+            const transactionType = document.createElement("td");
+            const transactionValue = document.createElement("td");
+            const transactionBalance = document.createElement("td");
+
+            transactionAgency.textContent = newTransaction.agency;
+            transactionAccount.textContent = newTransaction.account;
+            transactionTypeAccount.textContent = newTransaction.typeAccount;
+            transactionDiscription.textContent = newTransaction.discription;
+            transactionType.textContent = newTransaction.typeTransaction;
+            transactionValue.textContent = newTransaction.value.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+            transactionBalance.textContent = newTransaction.balance.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+
+            transaction.appendChild(transactionAgency);
+            transaction.appendChild(transactionAccount);
+            transaction.appendChild(transactionTypeAccount);
+            transaction.appendChild(transactionDiscription);
+            transaction.appendChild(transactionType);
+            transaction.appendChild(transactionValue);
+            transaction.appendChild(transactionBalance);
+
+            transactionTable.appendChild(transaction);
+
+            agencyTransaction.value = "";
+            accountTransaction.value = "";
+            typeAccountTransaction.value = "---";
+            discriptionTransaction.value = "";
+            valueTransaction.value = "";
+        }
+    });
+});

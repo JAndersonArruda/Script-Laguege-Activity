@@ -1,13 +1,60 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Transação Bancaria</title>
     <link rel="stylesheet" href="./css/styles.css">
 </head>
 <body>
-    
+    <div>
+        <form action="">
+            <h2>Transação Bancaria</h2><br>
+
+            <label for="agency">Agencia</label><br>
+            <input type="text" name="agency" id="agency-transaction" placeholder="0000-0" required><br>
+
+            <label for="account">Conta</label><br>
+            <input type="text" name="account" id="account-transaction" placeholder="0000000-0" required><br>
+
+            <label for="type-account">Tipo da Conta</label><br>
+            <select name="type-account" id="type-account-transaction" required>
+                <option value="---">---</option>
+                <option value="corrente">Conta Corrente</option>
+                <option value="poupanca">Conta Poupança</option>
+                <option value="conjunta">Conta Conjunta</option>
+            </select><br>
+
+            <label for="discription">Discrição</label><br>
+            <textarea name="discription" id="discription" cols="30" rows="6"></textarea>
+
+            <label for="value-transaction">Valor</label><br>
+            <input type="text" name="value-transaction" id="value-transaction" placeholder="00,00" required><br>
+
+            <button id="addTransaction">Adicionar</button>
+        </form>
+    </div>
+
+    <div>
+        <h3>Transações</h3>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Agencia</th>
+                    <th>Conta</th>
+                    <th>Tipo da Conta</th>
+                    <th>Discrição</th>
+                    <th>Tipo da Transação</th>
+                    <th>Valor</th>
+                    <th>Saldo</th>
+                </tr>
+            </thead>
+
+            <tbody id="list-transactions">
+                
+            </tbody>
+        </table>
+    </div>
 
     <script src="./js/scripts.js"></script>
 </body>
