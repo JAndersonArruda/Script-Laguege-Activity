@@ -77,22 +77,41 @@ document.addEventListener("DOMContentLoaded", () => {
             const clientAgency = document.createElement("td");
             const clientAccount = document.createElement("td");
             const clientType = document.createElement("td");
-            const clientTransation = document.createElement("td");
+            const clientHithdraw = document.createElement("td");
+            const clientAction = document.createElement("td");
+
+            const btHithdraw = document.createElement("button");
+            btHithdraw.addEventListener("click", () => {
+                if (client.balance >= 100) {
+                    return client.balance -= 100;
+                }
+                return client.balance;
+            });
+
+            const btDeposit = document.createElement("button");
+            btDeposit.addEventListener("click", () => client.balance += 100);
 
             clientName.textContent = client.name;
             clientBank.textContent = client.bank;
             clientAgency.textContent = client.agency;
             clientAccount.textContent = client.account;
             clientType.textContent = client.type;
-            clientTransation.textContent = client.balance.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+            clientHithdraw.textContent = client.balance.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+
+            btHithdraw.textContent = "Dow";
+            btDeposit.textContent = "Up";
+
+            clientAction.appendChild(btDeposit);
+            clientAction.appendChild(btHithdraw);
 
             newCleint.appendChild(clientName);
             newCleint.appendChild(clientBank);
             newCleint.appendChild(clientAgency);
             newCleint.appendChild(clientAccount);
             newCleint.appendChild(clientType);
-            newCleint.appendChild(clientTransation);
-
+            newCleint.appendChild(clientHithdraw);
+            newCleint.appendChild(clientAction);
+            
             listClientTbody.appendChild(newCleint);
 
             nameInput.value = "";
@@ -107,16 +126,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 // Worked Class
-/*
 document.addEventListener("DOMContentLoaded", () => {
-    const listClientTbody = document.querySelector("#list-client");
-    const nameInput = document.querySelector("#name");
-    const bankInput = document.querySelector("#bank");
-    const agencyInput = document.querySelector("#agency");
-    const accountInput = document.querySelector("#account");
-    const typeAccountInput = document.querySelector("#type-account");
-    const balanceAccountInput = document.querySelector("#balance-account");
-    const addClientButton = document.querySelector("#addClient");
+    // const listClientTbody = document.querySelector("#list-client");
+    // const nameInput = document.querySelector("#name");
+    // const bankInput = document.querySelector("#bank");
+    // const agencyInput = document.querySelector("#agency");
+    // const accountInput = document.querySelector("#account");
+    // const typeAccountInput = document.querySelector("#type-account");
+    // const balanceAccountInput = document.querySelector("#balance-account");
+    // const addClientButton = document.querySelector("#addClient");
    
     class ClientBank {
         constructor(name, document, balance) {
@@ -190,7 +208,7 @@ document.addEventListener("DOMContentLoaded", () => {
         balanceAccountInput.value = "";
     });
 });
-*/
+
 
 
 // Question 03.
