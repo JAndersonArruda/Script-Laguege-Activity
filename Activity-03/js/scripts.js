@@ -174,7 +174,6 @@ document.addEventListener("DOMContentLoaded", () => {
             }
             return this.typeTransaction;
         }
-        
     }
 
     const arrayTransaction = [];

@@ -1,0 +1,39 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+form {
+    padding: 20px 40px;
+    margin: 20px;
+}
+
+form label {
+    padding-left: 2px;
+}
+
+form input, form select {
+    width: 100%;
+    margin-bottom: 15px;
+    margin-top: 5px;
+    padding-left: 4px;
+}
+
+form button {
+    margin-top: 10px;
+    align-items: center;
+}
+
+table {
+    text-align: center;
+}
+
+table thead tr th{
+    padding: 0.5rem 1.5rem;
+}
+
+table tbody tr td{
+    padding: 0.9rem 2rem;
+}
