@@ -1,0 +1,37 @@
+Crie um novo projeto com uma página que tenha um formulário para adicionar itens de 
+compra de supermercado. Esse projeto deve conter um módulo lista.js que deve ter, no 
+mínimo, as seguintes funções:
+
+    -> adicionar(item), que deve receber um item de compra e armazenar dentro de uma 
+        lista.
+    -> remover(item), que deve receber um item de compra, buscar ele na lista de itens 
+        já armazenados e remover.
+    -> marcar(item), que deve receber um item de compra, buscar ele na lista de itens já 
+        armazenados e mudar uma propriedade para tornar esse item concluído, algo como 
+        "riscar da lista".
+    -> desmarcar(item), que deve fazer algo semelhante ao marcar(item), mas para desmarcar 
+        o item.
+    -> listar(), que deve retornar todos os itens que estão armazenados.
+
+
+Os itens que são recebidos por parâmetro devem conter, no mínimo, as seguintes 
+informações:
+
+    -> Código de barra (String/Number)
+    -> Nome do item (String)
+    -> Preço (Number)
+    -> Comprado (Boolean)
+
+
+A função do arquivo index.js deve ser: (1) Criar os eventos para inserção, remoção, etc; 
+(2) Invocar as funções do módulo lista.js para adicionar, remover, concluir e listar 
+itens; (3) Usar as informações fornecidas pelo módulo lista.js para montar uma tabela 
+com todos os itens da lista de compras na tela. Nenhum evento ou referência aos elementos 
+da página deve existir no arquivo lista.js
+
+As funções acima devem utilizar os dados atuais de localStorage, ou seja, salvar, remover 
+e listar devem acessar o armazenamento. Ao recarregarmos a página, todos os itens de 
+compra também devem ser carregados automaticamente (evento "load").
+
+Um exemplo de como a interface pode ser estruturada é demonstrado abaixo. Fique a 
+vontade para inovar caso queira.
