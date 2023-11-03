@@ -63,6 +63,8 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
     
+    const arrayClient = [];
+
     btAddClient.addEventListener("click", () =>  {
         if (clientName.value && clientBank.value && clientAgency.value && clientAccount.value && clientType.value && clientWithdraw.value) {
             const name  = clientName.value;
@@ -80,46 +82,60 @@ document.addEventListener("DOMContentLoaded", () => {
             };
 
             const newCleint = new ClientBank(name, objectDocument, balance);
+            arrayClient.push(newCleint)
 
-            const client = document.createElement("tr");
-            const nameClient = document.createElement("td");
-            const bankClient = document.createElement("td");
-            const agencyClient = document.createElement("td");
-            const accountClient = document.createElement("td");
-            const typeClient = document.createElement("td");
-            const withdrawClient = document.createElement("td");
-            const actionClient = document.createElement("td");
-            const btDeposit = document.createElement("button")
-            const btWithdraw = document.createElement("button")
+            clientTable.replaceChildren();
+            arrayClient.forEach((client) => {
+                const clientRow = document.createElement("tr");
+                const nameClient = document.createElement("td");
+                const bankClient = document.createElement("td");
+                const agencyClient = document.createElement("td");
+                const accountClient = document.createElement("td");
+                const typeClient = document.createElement("td");
+                const withdrawClient = document.createElement("td");
+                const actionClient = document.createElement("td");
+                const btDeposit = document.createElement("button")
+                const btWithdraw = document.createElement("button")
 
-            nameClient.textContent = newCleint.name;
-            bankClient.textContent = newCleint.document.bank;
-            agencyClient.textContent = newCleint.document.agency;
-            accountClient.textContent = newCleint.document.account;
-            typeClient.textContent = newCleint.document.type;
-            withdrawClient.textContent = newCleint.balance.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
-            btDeposit.textContent = "Deposito";
-            btWithdraw.textContent = "Sacar";
+                nameClient.textContent = client.name;
+                bankClient.textContent = client.document.bank;
+                agencyClient.textContent = client.document.agency;
+                accountClient.textContent = client.document.account;
+                typeClient.textContent = client.document.type;
+                withdrawClient.textContent = client.balance.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+                btDeposit.textContent = "Deposito";
+                btWithdraw.textContent = "Sacar";
 
-            actionClient.appendChild(btDeposit);
-            actionClient.appendChild(btWithdraw);
-            
-            client.appendChild(nameClient);
-            client.appendChild(bankClient);
-            client.appendChild(agencyClient);
-            client.appendChild(accountClient);
-            client.appendChild(typeClient);
-            client.appendChild(withdrawClient);
-            client.appendChild(actionClient);
+                actionClient.appendChild(btDeposit);
+                actionClient.appendChild(btWithdraw);
 
-            clientTable.appendChild(client);
+                clientRow.appendChild(nameClient);
+                clientRow.appendChild(bankClient);
+                clientRow.appendChild(agencyClient);
+                clientRow.appendChild(accountClient);
+                clientRow.appendChild(typeClient);
+                clientRow.appendChild(withdrawClient);
+                clientRow.appendChild(actionClient);
+                
+                clientTable.appendChild(clientRow);
+                
+                btDeposit.addEventListener("click", () => {
+                    client.deposit();
+                    withdrawClient.textContent = client.balance.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+                });
 
-            clientName.value = "";
-            clientBank.value = "";
-            clientAgency.value = "";
-            clientAccount.value = "";
-            clientType.value = "---";
-            clientWithdraw.value = "";
+                btWithdraw.addEventListener("click", () => {
+                    client.withdraw();
+                    withdrawClient.textContent = client.balance.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+                });
+
+                clientName.value = "";
+                clientBank.value = "";
+                clientAgency.value = "";
+                clientAccount.value = "";
+                clientType.value = "---";
+                clientWithdraw.value = "";
+            });
         }
     });
 });
@@ -150,18 +166,18 @@ document.addEventListener("DOMContentLoaded", () => {
             this.balance = balance;
         }
 
-        updateBalance(transaction) {
+        updateBalance() {
             if (this.value > 0) {
-                this.balance += transaction.value;
+                this.balance += this.value;
                 return this.balance;
             }
             if (this.value < 0) {
-                this.balance -= transaction.value;
+                this.balance -= this.value;
                 return this.balance;
             }
         }
 
-        statusTransaction(transaction) {
+        statusTransaction() {
             if (this.value > 0) {
                 this.typeTransaction = "Credit";
                 return this.typeTransaction;
@@ -183,8 +199,8 @@ document.addEventListener("DOMContentLoaded", () => {
             const value = parseFloat(valueTransaction.value);
 
             const newTransaction = new Transaction(agency, account, typeAccount, discription, "", value, 0);
-            newTransaction.updateBalance(newTransaction);
-            newTransaction.statusTransaction(newTransaction);
+            newTransaction.updateBalance();
+            newTransaction.statusTransaction();
 
             const transaction = document.createElement("tr");
             const transactionAgency = document.createElement("td");
