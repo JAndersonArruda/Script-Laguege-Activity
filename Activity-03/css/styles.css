@@ -37,3 +37,15 @@ table thead tr th{
 table tbody tr td{
     padding: 0.9rem 2rem;
 }
+
+.debit {
+    color: #ff0000;
+}
+
+.credit {
+    color: #008000
+}
+
+.credit, .debit {
+    border-color: #000;
+}

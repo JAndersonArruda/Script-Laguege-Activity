@@ -146,17 +146,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
 document.addEventListener("DOMContentLoaded", () => {
     const transactionTable = document.querySelector("#list-transactions");
-
-    const agencyTransaction = document.querySelector("#agency-transaction");
-    const accountTransaction = document.querySelector("#account-transaction");
-    const typeAccountTransaction = document.querySelector("#type-account-transaction");
     const discriptionTransaction = document.querySelector("#discription");
     const valueTransaction = document.querySelector("#value-transaction");
-
     const btAddTransactions = document.querySelector("#addTransaction");
 
     class Transaction {
-        constructor(agency, account, typeAccount, discription, typeTransaction, value, balance) {
+        constructor(agency = "9836-0", account = "0006453-1", typeAccount = "corrente", discription = null, typeTransaction = null, value = null, balance = 500) {
             this.agency = agency;
             this.account = account;
             this.typeAccount = typeAccount;
@@ -167,73 +162,76 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         updateBalance() {
-            if (this.value > 0) {
-                this.balance += this.value;
-                return this.balance;
-            }
-            if (this.value < 0) {
-                this.balance -= this.value;
-                return this.balance;
-            }
+            this.balance += this.value;
+            return this.balance;
         }
 
         statusTransaction() {
             if (this.value > 0) {
-                this.typeTransaction = "Credit";
-                return this.typeTransaction;
+                this.typeTransaction = "credit";
+            } else {
+                this.typeTransaction = "debit";
             }
-            if (this.value < 0) {
-                this.typeTransaction = "Debit";
-                return this.typeTransaction;
-            }
+            return this.typeTransaction;
         }
         
     }
 
+    const arrayTransaction = [];
+
+    const newTransaction = new Transaction();
+    arrayTransaction.push(newTransaction);
+
     btAddTransactions.addEventListener("click", () => {
-        if (agencyTransaction.value && accountTransaction.value && typeAccountTransaction.value && discriptionTransaction.value && valueTransaction.value) {
-            const agency = agencyTransaction.value;
-            const account = accountTransaction.value;
-            const typeAccount = typeAccountTransaction.value;
+        if (discriptionTransaction.value && valueTransaction.value) {
             const discription = discriptionTransaction.value;
             const value = parseFloat(valueTransaction.value);
 
-            const newTransaction = new Transaction(agency, account, typeAccount, discription, "", value, 0);
-            newTransaction.updateBalance();
-            newTransaction.statusTransaction();
+            arrayTransaction.forEach((transaction) => {
+                transaction.discription = discription;
+                transaction.value = value;
 
-            const transaction = document.createElement("tr");
-            const transactionAgency = document.createElement("td");
-            const transactionAccount = document.createElement("td");
-            const transactionTypeAccount = document.createElement("td");
-            const transactionDiscription = document.createElement("td");
-            const transactionType = document.createElement("td");
-            const transactionValue = document.createElement("td");
-            const transactionBalance = document.createElement("td");
+                transaction.updateBalance();
+                transaction.statusTransaction();
 
-            transactionAgency.textContent = newTransaction.agency;
-            transactionAccount.textContent = newTransaction.account;
-            transactionTypeAccount.textContent = newTransaction.typeAccount;
-            transactionDiscription.textContent = newTransaction.discription;
-            transactionType.textContent = newTransaction.typeTransaction;
-            transactionValue.textContent = newTransaction.value.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
-            transactionBalance.textContent = newTransaction.balance.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+                const transactionRow = document.createElement("tr");
+                const transactionAgency = document.createElement("td");
+                const transactionAccount = document.createElement("td");
+                const transactionTypeAccount = document.createElement("td");
+                const transactionDiscription = document.createElement("td");
+                const transactionType = document.createElement("td");
+                const transactionValue = document.createElement("td");
+                const transactionBalance = document.createElement("td");
 
-            transaction.appendChild(transactionAgency);
-            transaction.appendChild(transactionAccount);
-            transaction.appendChild(transactionTypeAccount);
-            transaction.appendChild(transactionDiscription);
-            transaction.appendChild(transactionType);
-            transaction.appendChild(transactionValue);
-            transaction.appendChild(transactionBalance);
+                transactionAgency.textContent = transaction.agency;
+                transactionAccount.textContent = transaction.account;
+                transactionTypeAccount.textContent = transaction.typeAccount;
+                transactionDiscription.textContent = transaction.discription;
+                transactionType.textContent = transaction.typeTransaction;
 
-            transactionTable.appendChild(transaction);
+                if (transaction.typeTransaction === "credit") {
+                    transactionValue.classList.add("credit");
+                } else if (transaction.typeTransaction === "debit") {
+                    transactionValue.classList.add("debit");
+                }
 
-            agencyTransaction.value = "";
-            accountTransaction.value = "";
-            typeAccountTransaction.value = "---";
-            discriptionTransaction.value = "";
-            valueTransaction.value = "";
+                const formattedValue = (transaction.value < 0 ? -(transaction.value) : transaction.value).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+                transactionValue.textContent = formattedValue;
+                transactionBalance.textContent = transaction.balance.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+                
+                transactionRow.appendChild(transactionAgency);
+                transactionRow.appendChild(transactionAccount);
+                transactionRow.appendChild(transactionTypeAccount);
+                transactionRow.appendChild(transactionDiscription);
+                transactionRow.appendChild(transactionType);
+                transactionRow.appendChild(transactionValue);
+                transactionRow.appendChild(transactionBalance);
+
+                transactionTable.appendChild(transactionRow);
+
+                discriptionTransaction.value = "";
+                valueTransaction.value = "";
+            });
         }
     });
 });
