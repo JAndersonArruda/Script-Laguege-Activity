@@ -3,9 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Mercado</title>
+    <link rel="stylesheet" href="./css/styles.css">
 </head>
 <body>
-    
+    <main class="container">
+        <h3>Mercado</h3>
+
+        <div class="container-title">
+            <p class="title-form">Adicione um novo produto</p>
+        </div>
+
+        <form action="" class="container-form">
+            <input type="text" id="item-name" placeholder="Digite o item">
+            <input type="text" id="item-price" placeholder="Preço">
+            <button type="button" id="addItem">Adicionar</button>
+        </form>
+
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Preço</th>
+                    <th>Comprado</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody id="product-list">
+
+            </tbody>
+        </table>
+    </main>
+
+    <script src="./js/index.js"></script>
 </body>
 </html>
