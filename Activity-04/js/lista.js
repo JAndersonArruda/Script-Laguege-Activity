@@ -1,3 +1,9 @@
+// fuction update localStorage
+function updateLocalStorage(array) {
+    localStorage.setItem("products", JSON.stringify(array));
+}
+
+
 // function add
 function addProduct(array, barcode, name, price, purchased) {
     const product = {
@@ -8,8 +14,7 @@ function addProduct(array, barcode, name, price, purchased) {
     };
 
     array.push(product);
-    localStorage.setItem("products", JSON.stringify(array));
-
+    updateLocalStorage(array);
     return array;
 }
 
@@ -17,24 +22,27 @@ function addProduct(array, barcode, name, price, purchased) {
 // function remove
 function removeProduct(array, index) {
     array.splice(index, 1);
-    localStorage.setItem("products", JSON.stringify(array));
-
+    updateLocalStorage(array);
     return array;
 }
 
 
 // function mark
-function markProduct(product) {
-    product.purchased = true;
-    localStorage.setItem("products", JSON.stringify(product));
+function markProduct(product, array) {
+    if (!product.purchased) {
+        product.purchased = true;
+        updateLocalStorage(array);
+    }
     return product;
 }
 
 
 // function unmark
-function unmarkProduct(product) {
-    product.purchased = false;
-    localStorage.setItem("products", JSON.stringify(product));
+function unmarkProduct(product, array) {
+    if (product.purchased) {
+        product.purchased = false;
+        updateLocalStorage(array);
+    }
     return product;
 }
 
@@ -52,6 +60,7 @@ function listProduct(product, array, list) {
     productName.textContent = product.name;
     productPrice.textContent = product.price.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
     itemPurchased.type = "checkbox";
+    itemPurchased.checked = product.purchased;
     itemDelete.textContent = "Remover";
 
     productPurchased.appendChild(itemPurchased);
@@ -67,21 +76,14 @@ function listProduct(product, array, list) {
         list.removeChild(productRow);
     });
 
-    let indice = 0;
-    itemPurchased.addEventListener("click", () => {
-        if (indice === 0) {
-            markProduct(product);
-            indice = 1;
-        }
-        if (indice === 1) {
-            unmarkProduct(product);
-            indice = 0;
+    itemPurchased.addEventListener("change", () => {
+        if (itemPurchased.checked) {
+            markProduct(product, array);
+        } else {
+            unmarkProduct(product, array); 
         }
     });
-
     return productRow;
 }
 
-
-// export fucntions
-export { addProduct, listProduct };
+export { updateLocalStorage, addProduct, removeProduct, markProduct, unmarkProduct, listProduct };
