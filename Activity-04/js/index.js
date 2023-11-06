@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
     addProductButton.addEventListener("click", () => {
         if (nameInput.value && priceInput.value) {
             const name = nameInput.value;
-            const price = parseFloat(priceInput.value);
+            const price = parseFloat((priceInput.value).replace(",", "."));
             
             addProduct(arrayProduct, randomicBarcode(arrayProduct), name, price, false);
             
