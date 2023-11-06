@@ -32,6 +32,3 @@ da página deve existir no arquivo lista.js
 As funções acima devem utilizar os dados atuais de localStorage, ou seja, salvar, remover 
 e listar devem acessar o armazenamento. Ao recarregarmos a página, todos os itens de 
 compra também devem ser carregados automaticamente (evento "load").
-
-Um exemplo de como a interface pode ser estruturada é demonstrado abaixo. Fique a 
-vontade para inovar caso queira.

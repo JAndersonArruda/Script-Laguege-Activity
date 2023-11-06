@@ -18,20 +18,30 @@ form div button {
     margin-top: 10px;
     align-items: center;
 }
+
 .container{
     text-align: center;
 }
+
 .container-title, .container-form{
     text-align: left; 
 }
+
+.container-title {
+    position: relative;
+    background-color: #fff;
+}
+
 .title-form {
+    position: absolute;
+    background-color: white;
     margin-left: 3.2rem;
-    margin-bottom: -1.9rem;
+    margin-top: -0.4rem;
+    padding: 0rem 0.5rem;
 }
 .container-form {
     border: solid 1px #000;
-    padding: 1rem 1.3rem 0.6rem 1.3rem;
-    width: 35rem;  
+    padding: 1rem 1.3rem 0.6rem 1.3rem;  
     margin-bottom: 1px; 
 }
 
