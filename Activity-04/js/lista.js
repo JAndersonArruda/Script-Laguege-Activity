@@ -3,7 +3,6 @@ function updateLocalStorage(array) {
     localStorage.setItem("products", JSON.stringify(array));
 }
 
-
 // function add
 function addProduct(array, barcode, name, price, purchased) {
     const product = {
@@ -18,14 +17,12 @@ function addProduct(array, barcode, name, price, purchased) {
     return array;
 }
 
-
 // function remove
 function removeProduct(array, index) {
     array.splice(index, 1);
     updateLocalStorage(array);
     return array;
 }
-
 
 // function mark
 function markProduct(product, array) {
@@ -36,7 +33,6 @@ function markProduct(product, array) {
     return product;
 }
 
-
 // function unmark
 function unmarkProduct(product, array) {
     if (product.purchased) {
@@ -45,7 +41,6 @@ function unmarkProduct(product, array) {
     }
     return product;
 }
-
 
 // function list
 function listProduct(product, array, list) {
@@ -86,4 +81,30 @@ function listProduct(product, array, list) {
     return productRow;
 }
 
-export { updateLocalStorage, addProduct, removeProduct, markProduct, unmarkProduct, listProduct };
+
+// function radomicBarcode
+function barcodeJaExiste(barcode, products) {
+    return products.some((product) => product.barcode === barcode);
+}
+
+function unicValue(products) {
+    const tamAlagarismos = 13;
+    let value;
+    do {
+        value = Math.floor(Math.random() * Math.pow(10, tamAlagarismos));
+        value = value.toString().padStart(tamAlagarismos, "0");
+    } while (barcodeJaExiste(value, products));
+    return value;
+}
+
+function randomicBarcode(products) {
+    const tamAlagarismos = 13;
+    let barcode;
+    do {
+        barcode = unicValue(products);
+    } while (barcodeJaExiste(barcode, products));
+    return barcode;
+}
+
+
+export { updateLocalStorage, addProduct, removeProduct, markProduct, unmarkProduct, listProduct, randomicBarcode };

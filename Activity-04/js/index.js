@@ -1,4 +1,4 @@
-import { addProduct, listProduct  } from "./lista.js";
+import { addProduct, listProduct, randomicBarcode } from "./lista.js";
 
 document.addEventListener("DOMContentLoaded", () => {
     const listTable = document.querySelector("#product-list");
@@ -19,16 +19,16 @@ document.addEventListener("DOMContentLoaded", () => {
             const name = nameInput.value;
             const price = parseFloat(priceInput.value);
             
-            addProduct(arrayProduct, "02887177222929-87272", name, price, false);
+            addProduct(arrayProduct, randomicBarcode(arrayProduct), name, price, false);
             
             listTable.replaceChildren();
             
             arrayProduct.forEach((product) => {
                 listTable.appendChild(listProduct(product, arrayProduct, listTable));
-                
-                nameInput.value = "";
-                priceInput.value = "";
             });
+
+            nameInput.value = "";
+            priceInput.value = "";
         }
     });
 });
