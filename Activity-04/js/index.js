@@ -1,31 +1,63 @@
-import { addProduct, listProduct, randomicBarcode } from "./lista.js";
+import { addProduct, removeProduct, markProduct, unmarkProduct, listProduct } from "./lista.js";
 
 document.addEventListener("DOMContentLoaded", () => {
     const listTable = document.querySelector("#product-list");
     const nameInput = document.querySelector("#item-name");
     const priceInput = document.querySelector("#item-price");
     const addProductButton = document.querySelector("#addItem");
-    
-    const arrayProduct = JSON.parse(localStorage.getItem("products")) || [];
-    
-    listTable.replaceChildren();
+
+    const arrayItens = listProduct();
+
+    function loadList() {
+        listTable.replaceChildren();
+        arrayItens.forEach((product) => {
+            const productRow = document.createElement("tr");
+            const productName = document.createElement("td");
+            const productPrice = document.createElement("td");
+            const productPurchased = document.createElement("td");
+            const productDelete = document.createElement("td");
+            const itemPurchased = document.createElement("input");
+            const itemDelete = document.createElement("button");
+
+            productName.textContent = product.name;
+            productPrice.textContent = product.price.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+            itemPurchased.type = "checkbox";
+            itemPurchased.checked = product.purchased;
+            itemDelete.textContent = "Remover";
+
+            productPurchased.appendChild(itemPurchased);
+            productDelete.appendChild(itemDelete);
+            productRow.appendChild(productName);
+            productRow.appendChild(productPrice);
+            productRow.appendChild(productPurchased);
+            productRow.appendChild(productDelete);
+
+            itemDelete.addEventListener("click", () => {
+                removeProduct(arrayItens.indexOf(product));
+                listTable.removeChild(productRow);
+            });
             
-    arrayProduct.forEach((product) => {
-        listTable.appendChild(listProduct(product, arrayProduct, listTable));
-    });
+            itemPurchased.addEventListener("change", () => {
+                if (itemPurchased.checked) {
+                    markProduct(product, arrayItens);
+                } else {
+                    unmarkProduct(product, arrayItens); 
+                }
+            });
+
+            listTable.appendChild(productRow);
+        });
+    }
+
+    window.addEventListener("load", loadList);
 
     addProductButton.addEventListener("click", () => {
         if (nameInput.value && priceInput.value) {
             const name = nameInput.value;
             const price = parseFloat((priceInput.value).replace(",", "."));
             
-            addProduct(arrayProduct, randomicBarcode(arrayProduct), name, price, false);
-            
-            listTable.replaceChildren();
-            
-            arrayProduct.forEach((product) => {
-                listTable.appendChild(listProduct(product, arrayProduct, listTable));
-            });
+            addProduct(name, price);
+            loadList();
 
             nameInput.value = "";
             priceInput.value = "";

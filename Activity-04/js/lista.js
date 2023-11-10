@@ -1,25 +1,21 @@
-// function add
-function addProduct(array, barcode, name, price, purchased) {
+const arrayProduct = JSON.parse(localStorage.getItem("products")) || [];
+
+function addProduct(name, price) {
     const product = {
-        barcode: barcode,
+        barcode: Date.now(),
         name: name,
         price: price,
-        purchased: purchased
+        purchased: false
     };
-
-    array.push(product);
-    localStorage.setItem("products", JSON.stringify(array));
-    return array;
+    arrayProduct.push(product);
+    localStorage.setItem("products", JSON.stringify(arrayProduct));
 }
 
-// function remove
-function removeProduct(array, index) {
-    array.splice(index, 1);
-    localStorage.setItem("products", JSON.stringify(array));
-    return array;
+function removeProduct(index) {
+    arrayProduct.splice(index, 1);
+    localStorage.setItem("products", JSON.stringify(arrayProduct));
 }
 
-// function mark
 function markProduct(product, array) {
     if (!product.purchased) {
         product.purchased = true;
@@ -28,7 +24,6 @@ function markProduct(product, array) {
     return product;
 }
 
-// function unmark
 function unmarkProduct(product, array) {
     if (product.purchased) {
         product.purchased = false;
@@ -37,68 +32,9 @@ function unmarkProduct(product, array) {
     return product;
 }
 
-// function list
-function listProduct(product, array, list) {
-    const productRow = document.createElement("tr");
-    const productName = document.createElement("td");
-    const productPrice = document.createElement("td");
-    const productPurchased = document.createElement("td");
-    const productDelete = document.createElement("td");
-    const itemPurchased = document.createElement("input");
-    const itemDelete = document.createElement("button");
-
-    productName.textContent = product.name;
-    productPrice.textContent = product.price.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
-    itemPurchased.type = "checkbox";
-    itemPurchased.checked = product.purchased;
-    itemDelete.textContent = "Remover";
-
-    productPurchased.appendChild(itemPurchased);
-    productDelete.appendChild(itemDelete);
-
-    productRow.appendChild(productName);
-    productRow.appendChild(productPrice);
-    productRow.appendChild(productPurchased);
-    productRow.appendChild(productDelete);
-
-    itemDelete.addEventListener("click", () => {
-        removeProduct(array, array.indexOf(product));
-        list.removeChild(productRow);
-    });
-
-    itemPurchased.addEventListener("change", () => {
-        if (itemPurchased.checked) {
-            markProduct(product, array);
-        } else {
-            unmarkProduct(product, array); 
-        }
-    });
-    return productRow;
-}
-
-// function radomicBarcode
-function barcodeJaExiste(barcode, products) {
-    return products.some((product) => product.barcode === barcode);
-}
-
-function unicValue(products) {
-    const tamAlagarismos = 13;
-    let value;
-    do {
-        value = Math.floor(Math.random() * Math.pow(10, tamAlagarismos));
-        value = value.toString().padStart(tamAlagarismos, "0");
-    } while (barcodeJaExiste(value, products));
-    return value;
-}
-
-function randomicBarcode(products) {
-    const tamAlagarismos = 13;
-    let barcode;
-    do {
-        barcode = unicValue(products);
-    } while (barcodeJaExiste(barcode, products));
-    return barcode;
+function listProduct() {
+    return arrayProduct;
 }
 
 
-export { addProduct, listProduct, randomicBarcode };
+export { addProduct, removeProduct, markProduct, unmarkProduct, listProduct };
