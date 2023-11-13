@@ -1,0 +1,21 @@
+01. Crie um novo projeto com uma página que tenha 2 campos de texto e 1 botão com o rótulo "Achar". O usuário deve digitar um conjunto de números separados por um 
+"separador"  na primeira caixa de texto e informar o "separador" na segunda caixa e ao clicar no botão, deve ser mostrado em um elemento na tela o maior e o menor número 
+digitado.
+
+Exemplo: Números "2, 4, 5, 10, 1" e separador "," devem informar os números 1 e 10 como menor e maior, respectivamente. Para essa questão, crie um ouvinte de evento no referido 
+botão que busca os valores digitados e os separa.
+
+
+02. Crie um novo projeto com uma página que tenha apenas um campo de texto, onde o usuário deverá digitar uma Tarefa a ser adicionada quando ele pressionar a tecla "Enter". 
+Mostre a lista de tarefas logo abaixo do campo de texto, apresentando uma opção de "Remover" a tarefa, com um botão ou um ícone como um X. Ao clicar, a tarefa em questão 
+deve ser retirada da lista de tarefas.
+
+
+03. Crie uma cópia desse exemplo no seu Codesandbox e crie uma página que exiba todos os filmes contidos na constante filmes. A página também tem que ter 1 campo de texto que ao 
+passo que o usuário digita (evento keyup), ele deve "filtrar" (com o método filter) os filmes exibidos de acordo com o texto. Para comparar os textos, utilize a função 
+"includes''. Desconsidere maiúsculas e minúsculas. Caso não seja digitado nenhum texto, a página deve exibir todos os filmes novamente. 
+
+
+04. Crie um novo projeto com uma página que tenha 2 campos de texto com os rótulos Nome e Salário e 1 botão com o rótulo "Adicionar". O usuário deve digitar esses valores e ao 
+clicar em adicionar, deve ser criado um objeto com essas propriedades e valores e deve ser adicionado a um array. Na sequência, deve mostrar na tela por meio de um elemento 
+<li>. Deve ser exibido também quem ganha o maior salário e o total de salários pagos (utilize a função reduce).

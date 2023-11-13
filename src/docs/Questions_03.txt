@@ -1,0 +1,13 @@
+01. Crie um novo projeto com uma página que tenha 1 campo de texto e 1 campo do tipo "datetime-local" e 1 botão com o rótulo "Adicionar". O usuário deve digitar o nome de um 
+evento e selecionar em que horário esse evento (um objeto com os valores selecionados) vai ocorrer. Ao clicar em adicionar, deve ser mostrado na tela a lista de eventos em 
+ordem cronológica, utilizem o método sort de array. Para facilitar o trabalho de mostrar os eventos na tela, veja o método replaceChildren()
+
+
+02. Crie um novo projeto com uma página que tenha um formulário para adicionar clientes a um banco. Crie uma classe chamada ClienteBanco com os seguintes atributos: Nome, 
+Documento, Saldo. Liste os clientes criados e adicione dois botões em cada um, um para Depositar 100 e outro para Sacar 100. Ao clicar, o objeto em questão deve ter seu saldo 
+alterado, aumentando ou diminuindo seu saldo, e isso deve refletir no que é mostrado na tela.
+
+
+03. Crie um novo projeto com uma página que tem um formulário para um objeto baseado em uma classe Transacao, com no mínimo os campos Descrição (texto) e Valor, e um botão 
+Adicionar que ao clicar adicione uma nova transação, mostrada em uma tabela (<table>). Caso a transação seja com valor negativo (despesa), mostre o valor em vermelho, caso seja 
+positivo (receita), mostre em verde. Ao final da tabela, mostre o total de saldo.
