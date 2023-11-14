@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transação Bancaria</title>
+    <link rel="stylesheet" href="../../../../assets/css/mod_03/styles.css">
+</head>
+<body>
+    <div>
+        <form action="">
+            <h2>Transação Bancaria</h2><br>
+
+            <label for="discription">Discrição</label><br>
+            <textarea name="discription" id="discription" cols="30" rows="6"></textarea>
+
+            <label for="value-transaction">Valor</label><br>
+            <input type="text" name="value-transaction" id="value-transaction" placeholder="00,00" required><br>
+
+            <button id="addTransaction">Adicionar</button>
+        </form>
+    </div>
+
+    <div>
+        <h3>Transações</h3>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Agencia</th>
+                    <th>Conta</th>
+                    <th>Tipo da Conta</th>
+                    <th>Discrição</th>
+                    <th>Tipo da Transação</th>
+                    <th>Valor</th>
+                    <th>Saldo</th>
+                </tr>
+            </thead>
+
+            <tbody id="list-transactions">
+                
+            </tbody>
+        </table>
+    </div>
+
+    <script src="./index.js"></script>
+</body>
+</html>
