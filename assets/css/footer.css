@@ -3,6 +3,10 @@
     padding: 0.8rem;
     text-align: center;
     width: 100%;
-    position: fixed; /* apagar após  incerção do conteudo*/
-    bottom: 0; /* apagar após  incerção do conteudo*/
+    margin: -3rem 0 0 0;
+}
+
+.footer a {
+    text-decoration: none;
+    color: #000;
 }
