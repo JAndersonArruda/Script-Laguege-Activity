@@ -14,16 +14,16 @@ Os arquivos de folha de estilização estão agrupados de acordo com seus respec
 O projeto possuí várias funcionalidades tendo em vista que cada sub-projeto possuí um conjunto de até 5 desafios distintos, onde cada desafio abrange uma funcinalidade.
 
 * **Sub-projeto 01**
-  * **Desafio 01**
+  * **Desafio 01** -
     ***RandomicNumberList*** -> Gera um numero aleatorio ao cliclar no botão e o adiciona a lista de números aleatórios;
 
-  * **Desafio 02**
+  * **Desafio 02** -
     ***PowerCalculator*** -> Retorna na tela o resultado de uma exponenciação, onde ususário irá informar a base e o expoente;
 
-  * **Desafio 03**
+  * **Desafio 03** -
     ***BestFuel*** -> Compara os preços do alcool e da gasolia, e retorna na tela qual é o melhor commbustivel no memento;
 
-  * **Desafio 04**
+  * **Desafio 04** -
     ***TemperatureConverter*** -> Retorna na tela a conversão de graus Celsius, em Fahrenheit e Kelvin, de forma autonôma;
 
   * **Desafio 05**
@@ -31,32 +31,32 @@ O projeto possuí várias funcionalidades tendo em vista que cada sub-projeto po
 
 
 * **Sub-projeto 02**
-  * **Desafio 01**
+  * **Desafio 01** -
     ***ExtrenNumberConjuct*** -> Retorna o menor e o maior valor do connjunto de numeros informado;
 
-  * **Desafio 02**
+  * **Desafio 02** -
     ***To-doList*** -> Aramazena e exibe uma lista de tarefaz criada pelo usuário, cada elemento da lista pode ser removido ao cliclar no ```x```;
 
-  * **Desafio 03**
+  * **Desafio 03** -
     ***MoveShelf*** -> Retorna uma lista de filmes, onde, ao se alterar o campo de filtro, será filtrado automaticamente, por título, os filmes;
 
-  * **Desafio 04**
+  * **Desafio 04** -
     ***SalaryList*** -> Armazena uma lista de empregados, com seus respectivos salários. E calcula qual empregado possuí o maior salário, o valor de total a debitado do financeiro para pagar os funcioonarios e retorna na tela está informações.
 
 
 * **Sub-projeto 03**
-  * **Desafio 01**
+  * **Desafio 01** -
     ***EventAgend*** -> Armazena eventos agendados pelo usuário e retorna uma lista de eventos em ordem crescente de acordo com os horarios de cada evento;
 
-  * **Desafio 02**
+  * **Desafio 02** -
     ***BankAccount*** -> Armazena as contas de banco, onde nas mesmas, podem ser feitas operações de saque e deposito. As contas são mostradas para o usuário em forma de uma tabela;
 
-  * **Desafio 03**
+  * **Desafio 03** -
     ***BankTrasaction*** -> Armazena e manipula transações fieitas em uma conta estática, retorna os valores em uma tabela de dados.
 
 
 * **Sub-projeto 04**
-  * **Desafio 01**
+  * **Desafio 01** -
     ***Stock*** -> Este sub-projeto armazena os dados do estoque infomamados pelo usuário no localStorage do Browser, possuí as funcionalidads de listar os produtos, adicionar e atualizar os dados no localStorage, além de gerar um código de barras único para cada produto cadastrado. Todas estas informações são exibidas para o usuário por meio de uma interface gráfica.
 ##
 
