@@ -46,7 +46,7 @@ cd Script-Laguege-Activity
 ##
 
 ### Tecnologias 
-As tecnologias usadas no desenvolvimento são: HTML, CSS, e JavaScript
+As tecnologias usadas no desenvolvimento do projeto são: HTML, CSS, e JavaScript
 ##
 
 ### Autor
