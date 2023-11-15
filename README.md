@@ -17,6 +17,10 @@ Para ter acesso e executar o projeto, algumas configurações são necessarias.
 ***Passo 01***
 
 Crie um novo diretorio vasio e acesse-o pelo terminal
+```
+mkdir name-diretorio
+cd name-diretorio
+```
 
 ***Passo 02***
 
@@ -34,6 +38,11 @@ git clone git@github.com:JAndersonArruda/Script-Laguege-Activity.git
 ***Passo 03***
 
 Execute o arquivo index.html, localizado na raiz do projeto.
+```
+cd Script-Laguege-Activity
+./index.html
+```
+##
 
-## Autor
+### Autor
 [J. A. F. Arruda](https://github.com/JAndersonArruda/)
