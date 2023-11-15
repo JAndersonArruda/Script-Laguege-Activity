@@ -11,7 +11,25 @@ Os arquivos de folha de estilização estão agrupados de acordo com seus respec
 ##
 
 ### Funcionalidades
+O projeto possuí várias funcionalidades tendo em vista que cada sub-projeto possuí um conjunto de até 5 desafios distintos, onde cada desafio abrange uma funcinalidade.
 
+* Sub-projeto 01
+  * Desafio 01
+  * Desafio 02
+  * Desafio 03
+  * Desafio 04
+  * Desafio 05
+* Sub-projeto 02
+  * Desafio 01
+  * Desafio 02
+  * Desafio 03
+  * Desafio 04
+* Sub-projeto 03
+  * Desafio 01
+  * Desafio 02
+  * Desafio 03
+* Sub-projeto 04
+  * Desafio 01
 ##
 
 ### Como executar o projeto
