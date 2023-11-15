@@ -1,0 +1,40 @@
+header {
+    display: flex;
+}
+
+.nav {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.title-menu {
+    text-align: center;
+    background-color: #7edb18;
+    padding: 0.5rem 0;
+}
+
+.title {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 22px;
+}
+
+.container-menu {
+    background-color: #c0f685;
+    padding: 0.1rem 0;
+}
+.container-itens{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-around;
+    padding-left: 0;
+}
+.iten {
+    list-style: none;
+}
+
+.iten-link {
+    text-decoration: none;
+    color: #000;
+}
