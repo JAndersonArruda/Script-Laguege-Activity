@@ -7,11 +7,8 @@ A estrutura do projeto consite, com relação ao diretorio, em uma organização
 
 Os arquivos de folha de estilização estão agrupados de acordo com seus respectivos sub-programas entitulados ```mod_01```, ```mod_02```, ```mod_03``` e ```mod_04```, onde, os diretorios citados estão contidos no diretorio ```assets```, encontrado na raiz do projeto.
 ##
-o
-### Funcionalidades
 
-##
-### Tecnologias 
+### Funcionalidades
 
 ##
 
@@ -46,6 +43,10 @@ Execute o arquivo index.html, localizado na raiz do projeto.
 cd Script-Laguege-Activity
 ./index.html
 ```
+##
+
+### Tecnologias 
+As tecnologias usadas no desenvolvimento são: HTML, CSS, e JavaScript
 ##
 
 ### Autor
