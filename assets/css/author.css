@@ -1,4 +1,4 @@
-.autor  {
+.author  {
     position: relative;
     display: flex;
     flex-direction: row;
@@ -8,13 +8,13 @@
     padding-left: 8rem;
 }
 
-.ind-autor {
+.ind-author {
     position: absolute;
     margin-top: -2rem;
     margin-left: 1.1rem;
 }
 
-.autor-flex {
+.author-flex {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -36,11 +36,11 @@
     margin-top: -.8rem;
 }
 
-.autor-flex div p {
+.author-flex div p {
     font-size: 12px;
 }
 
-.autor-flex div h5 {
+.author-flex div h5 {
     margin-bottom: 0;
     margin-top: .8rem;
 }
