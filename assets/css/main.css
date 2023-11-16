@@ -1,0 +1,49 @@
+.container-main {
+    margin: 0 8rem;
+    background-color: #d8ffae80;
+    padding: 2rem 3rem;
+}
+
+.title-main {
+    text-align: center;
+    padding: 0.5rem 0 0.2rem 0;
+}
+
+.container-card {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.card {
+    margin: 0 0.75rem 3rem 0.75rem;
+}
+
+#card-stock {
+    width: 40%;
+}
+
+.title-card {
+    text-align: center;
+    background-color: #7ddb188f;
+    padding: 1rem;
+    margin: 0;
+    border-radius: 1rem 1rem 0 0;
+}
+
+.text-card {
+    text-align: justify;
+    background-color: #d8ffaef7;
+    padding: 1rem;
+    border-radius: 0 0 0.5rem 0.5rem;
+}
+
+.text-card p {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.link-card {
+    text-decoration: none;
+    color: #000;
+}
