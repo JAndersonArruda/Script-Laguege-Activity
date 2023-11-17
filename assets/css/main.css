@@ -1,6 +1,6 @@
 .container-main {
     margin: 0 8rem;
-    background-color: #d8ffae80;
+    background-color: #022626;
     padding: 2rem 3rem;
 }
 
@@ -25,7 +25,8 @@
 
 .title-card {
     text-align: center;
-    background-color: #7ddb188f;
+    background-color: #008778;
+    color: #fff;
     padding: 1rem;
     margin: 0;
     border-radius: 1rem 1rem 0 0;
@@ -33,7 +34,8 @@
 
 .text-card {
     text-align: justify;
-    background-color: #d8ffaef7;
+    background-color: #01817276;
+    color: #fff;
     padding: 1rem;
     border-radius: 0 0 0.5rem 0.5rem;
 }

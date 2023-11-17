@@ -18,7 +18,8 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    background-color: #d8ffaef7;
+    background-color: #01817276;
+    color: #fff;
     padding: 1rem 2rem 1rem 1.5rem;
     border-radius: 1rem 1rem .5rem .5rem;
 }

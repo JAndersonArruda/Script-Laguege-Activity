@@ -11,19 +11,19 @@ header {
 
 .title-menu {
     text-align: center;
-    background-color: #7edb18;
+    background-color: #00796b;
     padding: 2.375rem 0;
 }
 
 .title {
     font-family: 'Times New Roman', Times, serif;
     font-size: 30px;
-    color: #000;
+    color: #fff;
     text-decoration: none;
 }
 
 .container-menu {
-    background-color: #c0f685;
+    background-color: #029786;
     padding: 0.1rem 0;
 }
 .container-itens{
@@ -38,5 +38,5 @@ header {
 
 .iten-link {
     text-decoration: none;
-    color: #000;
+    color: #fff;
 }
