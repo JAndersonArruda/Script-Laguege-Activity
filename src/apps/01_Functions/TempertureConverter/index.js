@@ -10,6 +10,11 @@ document.addEventListener("DOMContentLoaded", () => {
         const fahrenheit = converterFahrenheit(celsiusInput.value);
         const kelvin = converterKelvin(celsiusInput.value);
         spanFahrenheit.textContent = fahrenheit.toFixed(2) + " °F";
-        spanKelvin.textContent = kelvin.toFixed(2) + " °K";
+        if (celsiusInput.value === "" || celsiusInput.value === " ") {
+            spanKelvin.textContent = "273.15 °K";
+        }
+        else {
+            spanKelvin.textContent = kelvin.toFixed(2) + " °K";
+        }
     });
 });
