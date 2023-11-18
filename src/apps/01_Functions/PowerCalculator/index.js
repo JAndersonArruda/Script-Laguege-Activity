@@ -7,5 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
     calculoBotao.addEventListener("click", () => {
         const potencia = Math.pow(base.value, expoente.value);
         divResult.textContent = `O resultado da operção é ${potencia.toLocaleString("pt-BR")}`;
+        base.value = "";
+        expoente.value = "";
     });
 });

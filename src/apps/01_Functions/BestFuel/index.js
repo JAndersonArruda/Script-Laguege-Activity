@@ -10,5 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
         } else {
             divResultado.textContent = `O melhor combustivel no momento é a gasolina`;
         }
+        alcool.value = "";
+        gasolina.value = "";
     });
 });

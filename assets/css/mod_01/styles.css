@@ -10,6 +10,22 @@ body {
     padding: 2rem 3rem;
 }
 
+.button{
+    padding: 1rem 4rem;
+    border-radius: 1.4rem;
+    border: 0;
+    font-size: 15px;
+    color: #ffffff;
+    background-color: #022626;
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+}
+
+
+/* Question 01 */
 .container-list {
     padding: 2rem 0 0 0;
     display: flex;
@@ -23,16 +39,64 @@ body {
     padding: 2rem 0 3rem 0;
 }
 
-#gerarBotao {
-    padding: 1rem 4rem;
-    border-radius: 1.4rem;
-    border: 0;
-    font-size: 15px;
-    color: #ffffff;
-    background-color: #022626;
+
+/* Question 02, 03*/
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: -2rem 20rem 0 20rem;
+    background-color: #008778;
+    padding: 2rem 3rem;
 }
 
-.footer {
-    position: fixed;
-    bottom: 0;
+.conteiner-iten {
+    align-items: end;
+    justify-content: center;
+}
+
+.form-iten {
+    display: flex;
+    flex-direction: column;
+    margin: 0 0 1.5rem;
+}
+
+.form-iten label {
+    font-size: 18px;
+    margin: .5rem 0 .2rem 0;
+}
+
+.form-iten input {
+    font-size: 16px;
+    color: #414242;
+    height: 2rem;
+    border-radius: .5rem;
+    border: 0;
+    padding: 0 0 0 .4rem;
+}
+
+#expoente {
+    margin: 0 0 1.5rem;
+}
+
+#resultado {
+    text-align: center;
+    margin: 2rem 0 1rem 0;
+    font-size: 15.8px;
+}
+
+
+/* Question 04 */
+.form-iten #celsius {
+    width: 28rem;    
+}
+
+.conteiner-iten span {
+    font-size: 15.8px;
+}
+
+
+/* Question 05 */
+.result {
+    text-align: left;
 }
