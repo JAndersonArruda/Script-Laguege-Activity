@@ -1,6 +1,38 @@
 body {
+    margin: 0;
+    background-color: #000000;
+    color: #fff;
+}
+
+.container-main {
+    margin: 0 10rem;
+    background-color: #022626;
+    padding: 2rem 3rem;
+}
+
+.container-list {
+    padding: 2rem 0 0 0;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    background-color: #008778;
+    margin: -2rem 30rem 0 30rem;
+}
+
+#listaNumeros {
+    padding: 2rem 0 3rem 0;
+}
+
+#gerarBotao {
+    padding: 1rem 4rem;
+    border-radius: 1.4rem;
+    border: 0;
+    font-size: 15px;
+    color: #ffffff;
+    background-color: #022626;
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
 }
