@@ -5,20 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Combustível</title>
     <link rel="stylesheet" href="../../../../assets/css/mod_01/styles.css">
+    <link rel="stylesheet" href="../../../../assets/css/header.css">
+    <link rel="stylesheet" href="../../../../assets/css/footer.css">
 </head>
 <body>
-    <h3>Melhor Combustível</h3>
+    <header>
+        <nav class="nav">
+            <div class="title-menu">
+                <h2>Melhor Combustível</h2>
+            </div>
+        </nav>
+    </header>
 
-    <label for="gasolina">Gasolina</label>
-    <input type="number" id="gasolina" placeholder="gasolina"><br>
+    <main class="container-main">
+        <form action="">
+            <div class="conteiner-iten">
+                <div class="form-iten">
+                    <label for="gasolina">Gasolina</label>
+                    <input type="number" id="gasolina" placeholder="gasolina"><br>
+                </div>
+                <div class="form-iten">
+                    <label for="alcool">Álcool</label>
+                    <input type="number" id="alcool" placeholder="álcool"><br>
+                </div>
+            </div>
+            <button id="botCombust" type="button" class="button">Calcular</button>
+        </form>
+        <div id="resultado">
 
-    <label for="alcool">Alcool</label>
-    <input type="number" id="alcool" placeholder="alcool"><br>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>Copyright &copy; 2023 - Projeto Script</p>
+    </footer>
     
-    <button id="botCombust">Calcular</button><br>
-
-    <div id="resultado"></div>
-
     <script src="./index.js"></script>
 </body>
 </html>
