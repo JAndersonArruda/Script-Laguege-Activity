@@ -3,17 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Questão 02</title>
+    <title>Tarefas</title>
     <link rel="stylesheet" href="../../../../assets/css/mod_02/styles.css">
+    <link rel="stylesheet" href="../../../../assets/css/header.css">
+    <link rel="stylesheet" href="../../../../assets/css/footer.css">
 </head>
 <body>
-    <h1>Lista de Tarefas</h1>
+    <header>
+        <nav class="nav">
+            <div class="title-menu">
+                <h2>Lista de Tarefas</h2>
+            </div>
+        </nav>
+    </header>
 
-    <input type="text" name="nome" id="tarefa" placeholder="Informe a tarefa">
+    <main class="container-main">
+        <form action="">
+            <div class="conteiner-iten">
+                <div class="form-iten">
+                    <input type="text" name="nome" id="tarefa" placeholder="Informe a tarefa">
+                </div>
+            </div>
+        </form>
+        <div class="result">
+            <div class="container-list">
+                <ul id="list">
 
-    <div>
-        <ul id="list"></ul>
-    </div>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>Copyright &copy; 2023 - Projeto Script</p>
+    </footer>
 
     <script src="./index.js"></script>
 </body>

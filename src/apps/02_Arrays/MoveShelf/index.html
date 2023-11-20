@@ -5,21 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Filmes</title>
     <link rel="stylesheet" href="../../../../assets/css/mod_02/styles.css">
+    <link rel="stylesheet" href="../../../../assets/css/header.css">
+    <link rel="stylesheet" href="../../../../assets/css/footer.css">
 </head>
 <body>
-    <h1>Estante de Filmes</h1>
+    <header>
+        <nav class="nav">
+            <div class="title-menu">
+                <h2>Estante de Filmes</h2>
+            </div>
+        </nav>
+    </header>
 
-    <input type="text" id="filter" placeholder="Filtrar por título"><br>
+    <main class="container-main">
+        <form action="">
+            <div class="container-itens">
+                <div class="form-iten">
+                    <input type="text" id="filter" placeholder="Filtrar por título">
+                </div>
+            </div>
+        </form>
+        <table border="1" class="table-film">
+            <thead>
+                <tr> 
+                    <th>Título</th>
+                    <th>Lançamento</th>
+                </tr>
+            </thead>
+            <tbody id="filmTable"></tbody>
+        </table>
+    </main>
 
-    <table border="1">
-        <thead>
-            <tr> 
-                <th>Título</th>
-                <th>Lançamento</th>
-            </tr>
-        </thead>
-        <tbody id="filmTable"></tbody>
-    </table>
+    <footer id="footer-move" class="footer">
+        <p>Copyright &copy; 2023 - Projeto Script</p>
+    </footer>
 
     <script src="./index.js"></script>
 </body>
