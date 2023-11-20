@@ -1,26 +1,49 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Financeiro</title>
     <link rel="stylesheet" href="../../../../assets/css/mod_02/styles.css">
+    <link rel="stylesheet" href="../../../../assets/css/header.css">
+    <link rel="stylesheet" href="../../../../assets/css/footer.css">
 </head>
 <body>
-    <h1>Lista de Salários</h1>
+    <header>
+        <nav class="nav">
+            <div class="title-menu">
+                <h2>Lista de Salários</h2>
+            </div>
+        </nav>
+    </header>
 
-    <h2>Adicionar a Lista</h2>
-    <input type="text" id="name" placeholder="Nome"><br>
-    <input type="text" id="wage" placeholder="Salário"><br>
+    <main class="container-main">
+        <form action="">
+            <div class="conteiner-iten">
+                <h3>Adicionar a Lista</h3>
+                <div class="form-iten">
+                    <input type="text" id="name" placeholder="Nome"><br>
+                </div>
+                <div class="form-iten">
+                    <input type="text" id="wage" placeholder="Salário"><br>
+                </div>
+            </div>
+            <button id="addEmployee" type="button" class="button">Adicionar</button><br>
+        </form>
+        <div class="container-list">
+            <div id="dados">
 
-    <button id="addEmployee">Adicionar</button><br>
+            </div>
+            <div class="list">
+                <h2 id="lista">Lista</h2>
+                <ul id="listWage"></ul>
+            </div>
+        </div>
+    </main>
 
-    <div id="dados"></div><br>
-
-    <div>
-        <h2 id="lista">Lista</h2>
-        <ul id="listWage"></ul>
-    </div>
+    <footer class="footer">
+        <p>Copyright &copy; 2023 - Projeto Script</p>
+    </footer>
         
     <script src="./index.js"></script>
 </body>

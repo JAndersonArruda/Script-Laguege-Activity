@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const employeeMaxWage = arrayLista.find((inEmployee) => parseFloat(inEmployee.wage) === maxWage);
 
             const newEmployee = document.createElement("li");
-            newEmployee.textContent = `Nome: ${employee.name}, Salário ${employee.wage.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}`;
+            newEmployee.textContent = `${employee.name} => ${employee.wage.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}`;
             lista.appendChild(newEmployee);
 
             const dadosMaiorWage = document.createElement("p");

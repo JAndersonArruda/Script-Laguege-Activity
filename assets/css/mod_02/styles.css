@@ -1,26 +1,145 @@
 body {
+    margin: 0;
+    background-color: #000000;
+    color: #fff;
+}
+
+.container-main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 10rem;
+    background-color: #022626;
+    padding: 2rem 3rem;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: -2rem 20rem 0 20rem;
+    background-color: #008778;
+    padding: 2rem 3rem;
+}
+
+.conteiner-iten {
+    align-items: end;
+    justify-content: center;
+}
+
+.form-iten {
+    display: flex;
+    flex-direction: column;
+    margin: 0 0 1.5rem;
+}
+
+.button{
+    padding: 1rem 4rem;
+    border-radius: 1.4rem;
+    border: 0;
+    font-size: 15px;
+    color: #ffffff;
+    background-color: #022626;
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+}
+
+
+/* Question 01, 02*/
+.form-iten input {
+    font-size: 16px;
+    color: #414242;
+    height: 2rem;
+    border-radius: .5rem;
+    border: 0;
+    padding: 0 0 0 .4rem;
+}
+
+#conjunto {
+    margin: 2rem 0 0 0;
+}
+#separador {
+    margin: 0 0 1.5rem;
+}
+
+#result, .result{
+    text-align: center;
+    margin: 2rem 0 1rem 0;
+    font-size: 15.8px;
+}
+
+
+/* Question 02 */
+/* .container-list {
+    display: flex;
+    align-items: end;
+} */
+
+#list li {
+    margin: .5rem 0 0 0;
+    list-style-position: inside;
+}
+
+#list li button {
+    background-color: #ff0000;
+    color: #ffffff;
+    font-size: 14px;
+    border: 0;
+    border-radius: 1rem;
+    margin: 0 0 0 .5rem;
+    padding: .2rem .5rem;
+}
+
+
+/* Qeustion 03 */
+.table-film {
+    text-align: center;
+    margin: -1rem 20rem 2rem;
+    padding: 0 8rem 3rem;
+    background-color: #008778;
+    border: 0;
+}
+
+.table-film thead tr th {
+    padding: 0.5rem 1.5rem;
+}
+
+.table-film tbody tr td {
+    padding: 0.9rem 2rem;
+}
+
+#footer-move {
+    /* position: relative;
+    bottom: 1; */
+    margin-top: 0;
+}
+
+
+/* Question 04 */
+.container-list {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-table {
-    text-align: center;
+.container-list .list {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
 }
 
-table thead tr th{
-    padding: 0.5rem 1.5rem;
-}
-
-table tbody tr td{
-    padding: 0.9rem 2rem;
-}
-
-p {
+#dados p {
     margin-bottom: -0.8rem;
 }
 
-#lista {
-    margin-bottom: -0.2rem;
+.container-list .list #lista {
+    margin: 3rem 1rem 0;
+}
+
+.container-list .list #listWage li {
+    margin-bottom: .4rem;
 }
