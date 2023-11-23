@@ -62,6 +62,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 transactionDiscription.textContent = transaction.discription;
                 transactionType.textContent = transaction.typeTransaction;
 
+                transactionDiscription.classList.add("discription-col");
+                
                 if (transaction.typeTransaction === "credit") {
                     transactionValue.classList.add("credit");
                 } else if (transaction.typeTransaction === "debit") {

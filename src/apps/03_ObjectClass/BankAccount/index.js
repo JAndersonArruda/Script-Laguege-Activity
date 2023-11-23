@@ -64,8 +64,11 @@ document.addEventListener("DOMContentLoaded", () => {
                 accountClient.textContent = client.document.account;
                 typeClient.textContent = client.document.type;
                 withdrawClient.textContent = client.balance.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
-                btDeposit.textContent = "Deposito";
+                btDeposit.textContent = "Depositar";
                 btWithdraw.textContent = "Sacar";
+
+                btDeposit.classList.add("btDeposit");
+                btWithdraw.classList.add("btWithdraw");
 
                 actionClient.appendChild(btDeposit);
                 actionClient.appendChild(btWithdraw);
