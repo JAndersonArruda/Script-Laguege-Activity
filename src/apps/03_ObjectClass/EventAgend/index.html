@@ -5,21 +5,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eventos</title>
     <link rel="stylesheet" href="../../../../assets/css/mod_03/styles.css">
+    <link rel="stylesheet" href="../../../../assets/css/header.css">
+    <link rel="stylesheet" href="../../../../assets/css/footer.css">
 </head>
 <body>
-    <h2>Agenda de Eventos</h2><br>
+    <header>
+        <nav class="nav">
+            <div class="title-menu">
+                <h2>Agenda de Eventos</h2>
+            </div>
+        </nav>
+    </header>
 
-    <input type="text" name="title" id="title-event" placeholder="Título do evento:"><br>
-    <input type="datetime-local" name="date" id="date-time"><br>
+    <main class="container-main">
+        <form action="">
+            <div class="conteiner-iten">
+                <div class="form-iten">
+                    <input type="text" name="title" id="title-event" placeholder="Título do evento:"><br>
+                </div>
+                <div class="form-iten">
+                    <input type="datetime-local" name="date" id="date-time"><br>
+                </div>
+            </div>
+            <button id="addButton" type="button" class="button">Adicionar</button>
+        </form>
 
-    <button id="addButton">Adicionar</button>
-
-    <div>
-        <h3>Lista de Eventos</h3>
-        <ul id="list">
-            
-        </ul>
-    </div>
+        <div class="list-event">
+            <div class="container-list-event">
+                <h3>Lista de Eventos</h3>
+                <ul id="list">
+                    
+                </ul> 
+            </div>
+        </div>
+    </main>
+                
+    <footer id="footer-move" class="footer">
+        <p>Copyright &copy; 2023 - Projeto Script</p>
+    </footer>
 
     <script src="./index.js"></script>
 </body>

@@ -5,59 +5,80 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Banco</title>
     <link rel="stylesheet" href="../../../../assets/css/mod_03/styles.css">
+    <link rel="stylesheet" href="../../../../assets/css/header.css">
+    <link rel="stylesheet" href="../../../../assets/css/footer.css">
 </head>
 <body>
-    <div>
+    <header>
+        <nav class="nav">
+            <div class="title-menu">
+                <h2>Contas Bancarias</h2>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container-main">
         <form action="">
-            <h2>Sistema Bancario</h2><br>
-
-            <label for="name">Nome</label><br>
-            <input type="text" name="name" id="name" placeholder="Informe se nome:" required><br>
-
-            <label for="bank">Banco</label><br>
-            <input type="text" name="bank" id="bank" placeholder="Informe o banco:" required><br>
-
-            <label for="agency">Agencia</label><br>
-            <input type="text" name="agency" id="agency" placeholder="0000-0" required><br>
-
-            <label for="account">Conta</label><br>
-            <input type="text" name="account" id="account" placeholder="0000000-0" required><br>
-
-            <label for="type-account">Tipo da Conta</label><br>
-            <select name="type-account" id="type-account" required>
-                <option value="---">---</option>
-                <option value="corrente">Conta Corrente</option>
-                <option value="poupanca">Conta Poupança</option>
-                <option value="conjunta">Conta Conjunta</option>
-            </select>
-
-            <label for="balance-account">Saldo</label><br>
-            <input type="text" name="balance-account" id="balance-account" placeholder="00,00" required><br>
-
-            <button id="addClient">Adicionar</button>
+            <div class="container-iten">
+                <div class="form-iten">
+                    <label for="name">Nome</label><br>
+                    <input type="text" name="name" id="name" placeholder="Informe se nome:" required><br>
+                </div>
+                <div class="form-iten">
+                    <label for="bank">Banco</label><br>
+                    <input type="text" name="bank" id="bank" placeholder="Informe o banco:" required><br>
+                </div>
+                <div class="form-iten">
+                    <label for="agency">Agencia</label><br>
+                    <input type="text" name="agency" id="agency" placeholder="0000-0" required><br>
+                </div>
+                <div class="form-iten">
+                    <label for="account">Conta</label><br>
+                    <input type="text" name="account" id="account" placeholder="0000000-0" required><br>
+                </div>
+                <div class="form-iten">
+                    <label for="type-account">Tipo da Conta</label><br>
+                    <select name="type-account" id="type-account" required>
+                        <option value="---">---</option>
+                        <option value="corrente">Conta Corrente</option>
+                        <option value="poupanca">Conta Poupança</option>
+                        <option value="conjunta">Conta Conjunta</option>
+                    </select>
+                </div>
+                <div class="form-iten">
+                    <label for="balance-account">Saldo</label><br>
+                    <input type="text" name="balance-account" id="balance-account" placeholder="00,00" required><br>
+                </div>
+            </div>
+            <button id="addClient" type="button" class="button">Adicionar</button>
         </form>
-    </div>
 
-    <div>
-        <h3>Clientes</h3>
-        <table border="1">
-            <thead>
-                <tr>
-                    <th>Nome</th>
-                    <th>Banco</th>
-                    <th>Agencia</th>
-                    <th>Conta</th>
-                    <th>Tipo da Conta</th>
-                    <th>Saldo</th>
-                    <th>Movimentação</th>
-                </tr>
-            </thead>
+        <div class="table">
+            <div class="table-title">
+                <h2>Clientes</h2>
+            </div>
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Banco</th>
+                        <th>Agencia</th>
+                        <th>Conta</th>
+                        <th>Tipo da Conta</th>
+                        <th>Saldo</th>
+                        <th>Movimentação</th>
+                    </tr>
+                </thead>
+                <tbody id="list-client">
+                    
+                </tbody>
+            </table>
+        </div>
+    </main>
 
-            <tbody id="list-client">
-                
-            </tbody>
-        </table>
-    </div>
+    <footer id="footer-move" class="footer">
+        <p>Copyright &copy; 2023 - Projeto Script</p>
+    </footer>
 
     <script src="./index.js"></script>
 </body>

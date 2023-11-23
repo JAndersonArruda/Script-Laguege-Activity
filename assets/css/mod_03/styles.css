@@ -1,25 +1,143 @@
 body {
+    margin: 0;
+    background-color: #000000;
+    color: #fff;
+}
+
+.container-main {
+    display: flex;
+    flex-direction: column;
+    margin: 0 10rem;
+    background-color: #022626;
+    padding: 2rem 3rem;
+    min-height: 76.8vh;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: -2rem 20rem 0 20rem;
+    background-color: #008778;
+    padding: 2rem 3rem 3.5rem 3rem;
+}
+
+.conteiner-iten {
+    align-items: end;
+    justify-content: center;
+}
+
+.form-iten {
+    display: flex;
+    flex-direction: column;
+    margin: 0 0 1.5rem;
+}
+
+.button{
+    padding: 1rem 4rem;
+    border-radius: 1.4rem;
+    border: 0;
+    font-size: 15px;
+    color: #ffffff;
+    background-color: #022626;
+}
+
+.footer {
+    margin: 0;
+}
+
+
+/* Question 01 */
+.list-event{
+    text-align: left;
+    margin: 2rem 0 1rem 0;
+    font-size: 15.8px;
+}
+
+.container-list-event {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-form {
-    padding: 20px 40px;
-    margin: 20px;
+.container-list-event .list {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
 }
 
-form label {
-    padding-left: 2px;
+
+/* Question 02, 03*/
+.form-iten input, .form-iten select {
+    font-size: 16px;
+    color: #414242;
+    height: 2rem;
+    width: 38vh;
+    border-radius: .5rem;
+    border: 0;
+    padding: 0 0 0 .4rem;
+    margin-top: .4rem;
 }
 
-form input, form select, form textarea {
-    width: 100%;
-    margin-bottom: 15px;
-    margin-top: 5px;
-    padding-left: 4px;
+.table {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 4rem;
 }
+
+.table-title {
+    padding-top: 4rem;
+}
+
+
+/* Question 02 */
+.btDeposit, .btWithdraw {
+    padding: .4rem 2rem .6rem 2rem;
+    border: 0;
+    border-radius: .9rem;
+    background-color: #008778;
+    color: #fff;
+    font-size: 15.5px;
+}
+
+.btDeposit {
+    margin-right: .8rem;
+}
+
+
+/* Question 03 */
+#discription {
+    font-size: 16px;
+    color: #414242;
+    border-radius: .2rem;
+    border: 0;
+    margin-top: .4rem;
+}
+
+.form-iten label {
+    font-size: 16.5px;
+}
+
+.discription-col {
+    text-align: left;
+    max-width: 20vh;
+    overflow-wrap: break-word;
+}
+
+.debit {
+    color: #ff0000;
+}
+
+.credit {
+    color: #00ca00
+}
+
+.credit, .debit {
+    border-color: #fff;
+}
+
 
 form button {
     margin-top: 10px;
@@ -38,14 +156,3 @@ table tbody tr td{
     padding: 0.9rem 2rem;
 }
 
-.debit {
-    color: #ff0000;
-}
-
-.credit {
-    color: #008000
-}
-
-.credit, .debit {
-    border-color: #000;
-}
