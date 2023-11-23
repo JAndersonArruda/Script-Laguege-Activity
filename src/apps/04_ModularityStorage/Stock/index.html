@@ -5,35 +5,59 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mercado</title>
     <link rel="stylesheet" href="../../../../assets/css/mod_04/styles.css">
+    <link rel="stylesheet" href="../../../../assets/css/header.css">
+    <link rel="stylesheet" href="../../../../assets/css/footer.css">
 </head>
 <body>
-    <main class="container">
-        <h3>Mercado</h3>
+    <header>
+        <nav class="nav">
+            <div class="title-menu">
+                <h2>Estoque de Mercado</h2>
+            </div>
+        </nav>
+    </header>
 
-        <div class="container-title">
-            <p class="title-form">Adicione um novo produto</p>
+    <main class="container-main">
+        <div class="container-secundary">
+            <div class="container-title">
+                <p class="title-form">Adicione um novo produto</p>
+            </div>
+            
+            <form action="" class="container-form">
+                <div class="container-iten">
+                    <div class="form-iten">
+                        <input type="text" id="item-name" placeholder="Digite o item">
+                    </div>
+                    <div class="form-iten">
+                        <input type="text" id="item-price" placeholder="Preço">
+                    </div>
+                    <div class="container-button">
+                        <button type="button" id="addItem" class="button">Adicionar</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="table">
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Preço</th>
+                        <th>Comprado</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody id="product-list">
+
+                </tbody>
+            </table>
         </div>
 
-        <form action="" class="container-form">
-            <input type="text" id="item-name" placeholder="Digite o item">
-            <input type="text" id="item-price" placeholder="Preço">
-            <button type="button" id="addItem">Adicionar</button>
-        </form>
-
-        <table border="1">
-            <thead>
-                <tr>
-                    <th>Nome</th>
-                    <th>Preço</th>
-                    <th>Comprado</th>
-                    <th>Ações</th>
-                </tr>
-            </thead>
-            <tbody id="product-list">
-
-            </tbody>
-        </table>
     </main>
+
+    <footer class="footer">
+        <p>Copyright &copy; 2023 - Projeto Script</p>
+    </footer>
 
     <script type="module" src="./index.js"></script>
 </body>

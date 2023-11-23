@@ -1,59 +1,114 @@
 body {
+    margin: 0;
+    background-color: #000000;
+    color: #fff;
+}
+
+.container-main {
     display: flex;
-    flex-direction: row;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-}
-
-form {
-    margin: 20px;
-}
-
-form div input {
-    padding: 2px 5px, 0px 5px
-}
-
-
-form div button {
-    margin-top: 10px;
-    align-items: center;
-}
-
-.container{
     text-align: center;
+    margin: 0 10rem;
+    background-color: #022626;
+    padding: 2rem 3rem;
+    min-height: 76.8vh;
+}
+
+.container-secundary {
+    margin: -2rem 15rem 0 15rem;
+    background-color: #008778;
+    padding: 3rem 5rem 2.5rem 5rem;
 }
 
 .container-title, .container-form{
     text-align: left; 
 }
 
+.container-iten {
+    display: flex;
+    flex-direction: row;
+}
+
 .container-title {
     position: relative;
-    background-color: #fff;
+    color: #fff;
 }
 
 .title-form {
     position: absolute;
-    background-color: white;
-    margin-left: 3.2rem;
-    margin-top: -0.4rem;
+    background-color: #008778;
+    margin: -.7rem 0 0 1.5rem;
     padding: 0rem 0.5rem;
+    font-size: 18px;
 }
+
 .container-form {
-    border: solid 1px #000;
-    padding: 1rem 1.3rem 0.6rem 1.3rem;  
-    margin-bottom: 1px; 
+    border: solid 1px #fff;
+    padding: 1rem 1.3rem 0.6rem 1.3rem;   
 }
 
-table {
-    text-align: center;
-    margin: 0rem 1rem;
+.form-iten {
+    margin-right: .5rem;
 }
 
-table thead tr th{
-    padding: 0.1rem 2.7rem;
+.form-iten input {
+    font-size: 16px;
+    color: #414242;
+    height: 2rem;
+    width: 38vh;
+    border-radius: .5rem;
+    border: 0;
+    padding: 0 0 0 .4rem;
+    margin-top: .4rem;
 }
 
-table tbody tr td{
-    padding: 0.1rem 1.2rem;
+.container-button {
+    margin-top: .257rem;
+}
+
+.button{
+    padding: .6rem 2rem;
+    border-radius: .8rem;
+    border: 0;
+    font-size: 15px;
+    color: #ffffff;
+    background-color: #022626;
+}
+
+.table {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: .5rem 1rem;
+}
+
+.table thead tr th{
+    padding: .5rem;
+}
+
+.table tbody tr td{
+    padding: .5rem 3rem;
+}
+
+.td-name {
+    min-width: 28vh;
+}
+
+.td-price {
+    min-width: 12vh;
+}
+
+.td-purchased, .td-delete {
+    min-width: 10vh;
+    max-width: 10vh;
+}
+
+.td-delete button {
+    background-color: #b50202;
+    color: #fff;
+    border: 0;
+    border-radius: .5rem;
+    padding: .2rem .8rem .4rem .8rem;
+    font-size: 15.5px;
 }
