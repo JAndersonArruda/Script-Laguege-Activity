@@ -19,6 +19,11 @@ document.addEventListener("DOMContentLoaded", () => {
             const itemPurchased = document.createElement("input");
             const itemDelete = document.createElement("button");
 
+            productName.classList.add("td-name");
+            productPrice.classList.add("td-price");
+            productPurchased.classList.add("td-purchased");
+            productDelete.classList.add("td-delete");
+
             productName.textContent = product.name;
             productPrice.textContent = product.price.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
             itemPurchased.type = "checkbox";
