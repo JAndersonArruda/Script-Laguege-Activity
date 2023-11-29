@@ -98,4 +98,4 @@ As tecnologias usadas no desenvolvimento do projeto são: HTML, CSS, e JavaScrip
 ##
 
 ### Autor
-[J. A. F. Arruda](https://github.com/JAndersonArruda/)
+[J. A. F. Arruda](https://jandersonarruda.github.io/)
